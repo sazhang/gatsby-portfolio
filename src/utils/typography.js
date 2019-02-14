@@ -35,8 +35,8 @@ const typography = new Typography({
       ],
     },
   ],
-  headerFontFamily: ['Montserrat', 'sans-serif'],
-  bodyFontFamily: ['Lora', 'serif'],
+  headerFontFamily: ['Lora', 'serif'],
+  bodyFontFamily: ['Montserrat', 'sans-serif'],
 })
 
 export default typography

@@ -2,7 +2,7 @@ import { React, Component } from "react";
 import { Link } from "gatsby";
 import tw from "tailwind.macro";
 import styled from "@emotion/styled";
-import logo from "../images/polyz.png";
+import logo from "../../images/polyz.png";
 
 // Navbar icon that leads to home
 const IconBtn = styled("button")`

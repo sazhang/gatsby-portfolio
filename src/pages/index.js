@@ -2,37 +2,43 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import styled from "@emotion/styled";
 import tw from "tailwind.macro";
+import { SectionHeader, Section, Footer, AboutSec } from "../utils/globalstyles";
 import Layout from "../components/layout";
+import Project from "../components/project";
+import Connect from "../components/connect";
+import About from "../components/about";
 
-const Header = styled("h1")`
-  ${tw`bg-grey-dark`};
-`;
-
-const ProjectHeader = styled("h3")`
-  ${tw`bg-grey-dark hover:text-grey-dark`};
+// Main page
+const ProjectSec = styled("div")`
+  ${tw`flex flex-wrap -mx-2 h-auto`};
 `;
 
 export default ({ data }) => {
+  const { edges } = data.allMarkdownRemark;
+
   return (
     <Layout>
-      <div>
-        <Header>Projects</Header>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
-            <Link to={node.fields.slug}>
-              <ProjectHeader>
-              <span>{node.frontmatter.num} — </span> {node.frontmatter.title} 
-              </ProjectHeader>
-            </Link>
-          </div>
-        ))}
-      </div>
-      <div>
-        <Header>About</Header>
-      </div>
-      <div>
-        <Header>Let's connect</Header>
-      </div>
+      <Section>
+        <div>
+          <SectionHeader>Projects</SectionHeader>
+          <ProjectSec>
+            {edges.map(({ node }) => (
+              <Project
+                key={node.id}
+                path={node.fields.slug}
+                title={node.frontmatter.title}
+                num={node.frontmatter.num}
+              />
+            ))}
+          </ProjectSec>
+        </div>
+      </Section>
+      <AboutSec>
+        <About />
+      </AboutSec>
+      <Footer>
+        <Connect />
+      </Footer>
     </Layout>
   );
 };
@@ -56,4 +62,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

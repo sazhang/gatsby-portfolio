@@ -8,15 +8,7 @@ import { MenuBtnDiv, Hamburger, Close } from "./menubtn";
 
 // Responsive menu w/ animated hamburger icon
 const Nav = styled("nav")`
-  ${tw`flex items-center justify-between flex-wrap px-8 py-3 relative`};
-`;
-
-const openColor = css`
-  background-color: #022446;
-`;
-
-const closeColor = css`
-  background-color: #01172d;
+  ${tw`flex items-center justify-between flex-wrap py-3 relative mx-6 sm:mx-10 md:mx-8 xl:mx-6`};
 `;
 
 const Overlay = styled.div`
@@ -44,7 +36,7 @@ const LinkDiv = styled("div")`
 `;
 
 const Block = css`
-  h3 {
+  a {
     display: block;
     margin-right: 0 auto;
     font-size: 2.25rem;
@@ -55,13 +47,13 @@ const Block = css`
 `;
 
 const Inline = css`
-  h3 {
+  a {
     display: inline-block;
     @media (min-width: 768px) {
-      margin: 0 1rem;
+      margin: 0 0.5rem;
     }
   }
-  h3:last-child {
+  a:last-child {
     margin-right: 0;
   }
 `;
@@ -77,6 +69,7 @@ function NavView(props) {
             <Navlink link="/" name="Projects" />
             <Navlink link="/" name="About" />
             <Navlink link="/" name="Connect" />
+            <Navlink link="/" name="Resume" />
           </div>
         </Content>
       </Overlay>
@@ -88,6 +81,7 @@ function NavView(props) {
         <Navlink link="/" name="Projects" />
         <Navlink link="/" name="About" />
         <Navlink link="/" name="Connect" />
+        <Navlink link="/" name="Resume" />
       </div>
     </LinkDiv>
   );

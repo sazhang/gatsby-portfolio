@@ -1,6 +1,6 @@
 ---
 title: "UFO Sightings Map"
-num: "02"
+num: 2
 ---
 
 Pandas are really sweet.
