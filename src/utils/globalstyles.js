@@ -1,25 +1,33 @@
 import styled from "@emotion/styled";
-import { css, jsx } from "@emotion/core";
+import { css } from "@emotion/core";
 import tw from "tailwind.macro";
 
-export const SectionHeader = styled("h1")`
-  ${tw`mb-4 text-4xl sm:text-5xl`};
-`;
+// Global styles
+export const bgColor = "#01172d";
+export const textColor = "#ced9f9";
 
 export const Section = styled("div")`
-  ${tw`mx-6 sm:mx-10 md:mx-8 xl:mx-6 mb-2 py-6 flex flex-wrap md:h-screen items-center`};
+  ${tw`flex flex-wrap w-auto my-4 mx-5 sm:mx-8 lg:mx-16 items-center`};
 `;
 
-export const AboutSec = styled("div")`
-  ${tw`mx-6 sm:mx-10 md:mx-8 xl:mx-6 mb-2 py-6 md:h-screen mx-auto items-center`};
+export const SectionHeader = styled("h1")`
+  ${tw`mb-4 text-4xl sm:text-5xl bg-blue-darker`};
 `;
 
-export const Footer = styled("div")`
-  ${tw`mx-6 sm:mx-10 md:mx-8 xl:mx-6 mb-2 py-6 flex flex-wrap h-64 items-end`};
+export const Viewport = styled("div")`
+  ${tw`min-h-screen flex flex-wrap justify-center items-center`};
 `;
 
-export const LinkStyle = styled("a")`
-  ${tw`text-xl font-medium`};
+export const FullWDiv = styled("div")`
+  ${tw`w-full`};
+`;
+
+// Link styles
+export const LinkStyle = css`
+  @media (min-width: 576px) {
+    font-size: 1.25rem;
+  }
+  font-weight: 600;
 `;
 
 const startColor = "#C33764";

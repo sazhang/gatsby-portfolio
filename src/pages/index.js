@@ -1,16 +1,16 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import styled from "@emotion/styled";
 import tw from "tailwind.macro";
-import { SectionHeader, Section, Footer, AboutSec } from "../utils/globalstyles";
+import { SectionHeader, Section, Viewport } from "../utils/globalstyles";
 import Layout from "../components/layout";
 import Project from "../components/project";
-import Connect from "../components/connect";
 import About from "../components/about";
+import Landing from "../components/landing";
 
 // Main page
-const ProjectSec = styled("div")`
-  ${tw`flex flex-wrap -mx-2 h-auto`};
+const Inner = styled("div")`
+  ${tw`flex flex-wrap -mx-2 h-full`};
 `;
 
 export default ({ data }) => {
@@ -18,10 +18,11 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <Section>
-        <div>
+      <Landing />
+      <Viewport>
+        <Section>
           <SectionHeader>Projects</SectionHeader>
-          <ProjectSec>
+          <Inner>
             {edges.map(({ node }) => (
               <Project
                 key={node.id}
@@ -30,15 +31,10 @@ export default ({ data }) => {
                 num={node.frontmatter.num}
               />
             ))}
-          </ProjectSec>
-        </div>
-      </Section>
-      <AboutSec>
-        <About />
-      </AboutSec>
-      <Footer>
-        <Connect />
-      </Footer>
+          </Inner>
+        </Section>
+      </Viewport>
+      <About />
     </Layout>
   );
 };

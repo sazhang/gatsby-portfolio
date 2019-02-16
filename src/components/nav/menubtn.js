@@ -1,7 +1,8 @@
 import tw from "tailwind.macro";
-import { css, jsx } from "@emotion/core";
+import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 
+// Animated hamburger icon
 export const MenuBtnDiv = styled("div")`
   ${tw`block relative border-none outline-none flex items-center mr-8`};
 `;

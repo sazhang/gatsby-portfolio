@@ -1,14 +1,15 @@
 import { React, Component } from "react";
 import tw from "tailwind.macro";
-import { css, jsx } from "@emotion/core";
+import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import Navicon from "./navicon";
-import Navlink from "./navlinks";
+import Links from "./links";
 import { MenuBtnDiv, Hamburger, Close } from "./menubtn";
+import NavOverlay from "./navoverlay"
 
 // Responsive menu w/ animated hamburger icon
 const Nav = styled("nav")`
-  ${tw`flex items-center justify-between flex-wrap py-3 relative mx-6 sm:mx-10 md:mx-8 xl:mx-6`};
+  ${tw`flex items-center justify-between flex-wrap py-3 mx-5 sm:mx-8 lg:mx-16`};
 `;
 
 const Overlay = styled.div`
@@ -53,9 +54,6 @@ const Inline = css`
       margin: 0 0.5rem;
     }
   }
-  a:last-child {
-    margin-right: 0;
-  }
 `;
 
 // Conditional rendering of navigation view
@@ -65,24 +63,14 @@ function NavView(props) {
     return (
       <Overlay isOpen={isOpen}>
         <Content>
-          <div css={Block}>
-            <Navlink link="/" name="Projects" />
-            <Navlink link="/" name="About" />
-            <Navlink link="/" name="Connect" />
-            <Navlink link="/" name="Resume" />
-          </div>
+          <Links style={Block}/>
         </Content>
       </Overlay>
     );
   }
   return (
     <LinkDiv>
-      <div css={Inline}>
-        <Navlink link="/" name="Projects" />
-        <Navlink link="/" name="About" />
-        <Navlink link="/" name="Connect" />
-        <Navlink link="/" name="Resume" />
-      </div>
+      <Links style={Inline}/>
     </LinkDiv>
   );
 }
@@ -98,7 +86,6 @@ class Navbar extends Component {
     this.setState({
       isOpen: !this.state.isOpen
     });
-    console.log(this.state.isOpen);
   }
 
   render() {

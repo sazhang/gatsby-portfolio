@@ -1,15 +1,24 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { css } from "@emotion/core";
 import Layout from "../components/layout";
+import { Section, SectionHeader, FullWDiv } from "../utils/globalstyles";
+
+// Layout for each project case study
+const Paragraph = css`
+  p {
+    margin: 0 auto;
+  }
+`;
 
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
     <Layout>
-      <div>
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
+      <Section>
+        <SectionHeader>{post.frontmatter.title}</SectionHeader>
+        <FullWDiv css={Paragraph} dangerouslySetInnerHTML={{ __html: post.html }} />
+      </Section>
     </Layout>
   );
 };

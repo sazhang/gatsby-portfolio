@@ -3,14 +3,12 @@ import styled from "@emotion/styled";
 import { Global, css } from "@emotion/core";
 import { StaticQuery, graphql } from "gatsby";
 import tw from "tailwind.macro";
-import Navbar from "./nav/navbar";
+import { bgColor, textColor } from "../utils/globalstyles";
+import Connect from "../components/connect";
 
 // Overall layout
-const bgColor = "#01172d";
-const textColor = "#ced9f9";
-
 const MainDiv = styled("div")`
-  ${tw`container mx-auto`};
+  ${tw`flex flex-col mx-auto overflow-hidden min-h-screen relative pb-20`};
 `;
 
 export default ({ children }) => (
@@ -28,12 +26,14 @@ export default ({ children }) => (
       <div>
         <Global
           styles={css`
+            html,
             body {
               background-color: ${bgColor};
               color: ${textColor};
+              width: 100%;
+              height: 100%;
               margin: 0 auto;
-              overflow: hidden;
-              max-width: 65rem;
+              padding: 0;
             }
             a {
               text-decoration: none;
@@ -52,8 +52,10 @@ export default ({ children }) => (
             }
           `}
         />
-        <Navbar />
-        <MainDiv>{children}</MainDiv>
+        <MainDiv>
+          {children}
+          <Connect />
+        </MainDiv>
       </div>
     )}
   />
