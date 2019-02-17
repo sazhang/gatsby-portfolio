@@ -4,8 +4,8 @@ import { css } from "@emotion/core";
 import tw from "tailwind.macro";
 import { SectionHeader, Section, Div, bgColor } from "../utils/globalstyles";
 import Noisify from "../images/noisified.png";
-import Navbar from "./nav/navbar";
 import { useSpring, animated } from "react-spring";
+import Background from "./background"
 
 // Landing section
 const BackgroundImg = css`
@@ -16,11 +16,11 @@ const BackgroundImg = css`
 `;
 
 const Full = styled("div")`
-  ${tw`w-full`};
+  ${tw`w-full bg-pink-darker`};
 `;
 
 const Container = styled("div")`
-  ${tw`min-h-screen container`};
+  ${tw`min-h-screen `};
 `;
 
 const AnimatedHeader = styled(animated.h1)`
@@ -37,10 +37,7 @@ class Landing extends Component {
     return (
       <Container>
         <Full>
-          <Navbar />
-        </Full>
-        <Full>
-            <Animate />
+          <Animate />
         </Full>
       </Container>
     );

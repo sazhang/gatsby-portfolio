@@ -5,7 +5,7 @@ import tw from "tailwind.macro";
 import PropTypes from "prop-types";
 
 const ProjectDiv = styled("div")`
-  ${tw`w-full md:w-1/2 px-2 mb-8`};
+  ${tw`w-full md:w-1/2 px-2 mb-8 bg-yellow-darker`};
 `;
 
 const Img = styled("img")`

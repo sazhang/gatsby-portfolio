@@ -17,10 +17,9 @@ const menubtn = css`
   span {
     background-color: #ced9f9;
     position: absolute;
-    border-radius: 2px;
     transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
     width: 100%;
-    height: 4px;
+    height: 3px;
     transition-duration: 500ms;
   }
 
@@ -30,7 +29,7 @@ const menubtn = css`
   }
 
   span:nth-of-type(2) {
-    top: 10px;
+    top: 11px;
     left: 0px;
   }
 
@@ -48,12 +47,12 @@ export const Hamburger = css`
 
   ${menubtn};
 
-  &:hover span:nth-of-type(odd) {
-    transform: rotate(-4deg) scaleY(1.1);
+  &:hover span:nth-of-type(1) {
+    transform: translateY(12px);
   }
 
-  &:hover span:nth-of-type(even) {
-    transform: rotate(3deg) scaleY(1.1);
+  &:hover span:nth-of-type(3) {
+    transform: translateY(-12px);
   }
 `;
 

@@ -5,11 +5,11 @@ import tw from "tailwind.macro";
 import { LinkStyle } from "../utils/globalstyles";
 
 // Let's connect section
-const FooterDiv = styled("div")`
+const FooterDiv = styled.div`
   ${tw`w-full items-center justify-center absolute pin-b px-4`};
 `;
 
-const Footer = styled("div")`
+const Footer = styled.div`
   ${tw`flex flex-wrap my-4 -mr-4 bg-blue-darkest`};
 `;
 

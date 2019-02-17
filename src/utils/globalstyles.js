@@ -3,6 +3,7 @@ import { css } from "@emotion/core";
 import tw from "tailwind.macro";
 
 // Global styles
+// other possible colors - [#01172d, #ced9f9]
 export const bgColor = "#01172d";
 export const textColor = "#ced9f9";
 

@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { css } from "@emotion/core";
 import Navlink from "./navlink";
 
+// Navigation links
 const Links = ({ style }) => (
   <div css={style}>
     <Navlink link="/" name="Projects" />

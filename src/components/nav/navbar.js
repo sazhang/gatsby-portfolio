@@ -5,46 +5,28 @@ import styled from "@emotion/styled";
 import Navicon from "./navicon";
 import Links from "./links";
 import { MenuBtnDiv, Hamburger, Close } from "./menubtn";
-import NavOverlay from "./navoverlay"
+import { Transition, animated } from "react-spring/renderprops";
+import BlockLinks from "./blocklinks"
 
-// Responsive menu w/ animated hamburger icon
-const Nav = styled("nav")`
-  ${tw`flex items-center justify-between flex-wrap py-3 mx-5 sm:mx-8 lg:mx-16`};
+// Responsive menu w/ animated hamburger icon - mx-5 sm:mx-8 lg:mx-16
+const Nav = styled.nav`
+  ${tw`flex items-center justify-between flex-wrap py-3`};
 `;
 
-const Overlay = styled.div`
-  ${({ isOpen }) => (isOpen ? `height: 100%;` : `height: 0%;`)}
+const Overlay = styled(animated.div)`
+  height: 100%;
   width: 100%;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.9);
-  overflow-y: hidden;
-  transition: 0.5s;
+  overflow: hidden;
+  will-change: transform, opacity;
 `;
 
-const Content = styled.div`
-  position: relative;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-`;
-
-const LinkDiv = styled("div")`
+const LinkDiv = styled.div`
   ${tw`hidden md:flex md:items-center w-full md:w-auto`};
-`;
-
-const Block = css`
-  a {
-    display: block;
-    margin-right: 0 auto;
-    font-size: 2.25rem;
-    @media (min-width: 576px) {
-      font-size: 3rem;
-    }
-  }
 `;
 
 const Inline = css`
@@ -56,35 +38,16 @@ const Inline = css`
   }
 `;
 
-// Conditional rendering of navigation view
-function NavView(props) {
-  const isOpen = props.isOpen;
-  if (isOpen) {
-    return (
-      <Overlay isOpen={isOpen}>
-        <Content>
-          <Links style={Block}/>
-        </Content>
-      </Overlay>
-    );
-  }
-  return (
-    <LinkDiv>
-      <Links style={Inline}/>
-    </LinkDiv>
-  );
-}
-
 class Navbar extends Component {
   constructor(props) {
     super(props);
-    this.state = { isOpen: false };
+    this.state = { show: false };
     this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen
+      show: !this.state.show
     });
   }
 
@@ -93,16 +56,32 @@ class Navbar extends Component {
       <Nav>
         <Navicon />
         <MenuBtnDiv>
-          <div
-            css={this.state.isOpen ? Close : Hamburger}
-            onClick={() => this.toggle()}
-          >
+          <div css={this.state.show ? Close : Hamburger} onClick={this.toggle}>
             <span />
             <span />
             <span />
           </div>
         </MenuBtnDiv>
-        <NavView isOpen={this.state.isOpen} />
+        <LinkDiv>
+          <Links style={Inline} />
+        </LinkDiv>
+        <Transition
+          native
+          items={this.state.show}
+          from={{ height: "0%" }}
+          enter={[{ height: "100%" }]}
+          leave={{ height: "0%" }}
+          config={{ tension: 10, friction: 5 }}
+        >
+          {show =>
+            show &&
+            (props => (
+              <Overlay style={props}>
+                <BlockLinks toggle={this.state.show} />
+              </Overlay>
+            ))
+          }
+        </Transition>
       </Nav>
     );
   }
