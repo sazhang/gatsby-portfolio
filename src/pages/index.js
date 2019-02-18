@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import styled from "@emotion/styled";
 import tw from "tailwind.macro";
-import { SectionHeader, Section, Viewport } from "../utils/globalstyles";
+import { Section, Viewport } from "../utils/globalstyles";
 import Layout from "../components/layout";
 import Project from "../components/project";
 import About from "../components/about";
@@ -21,7 +21,7 @@ export default ({ data }) => {
       <Landing />
       <Viewport>
         <Section>
-          <SectionHeader>Projects</SectionHeader>
+          <h1>Projects</h1>
           <Inner>
             {edges.map(({ node }) => (
               <Project

@@ -10,16 +10,12 @@ export const MenuBtnDiv = styled("div")`
 const menubtn = css`
   width: 30px;
   height: 25px;
-  position: absolute;
-  cursor: pointer;
-  display: inline-block;
+  ${tw`inline-block absolute cursor-pointer`};
 
   span {
-    background-color: #ced9f9;
-    position: absolute;
-    transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
-    width: 100%;
+    ${tw`bg-maintxtcolor absolute w-full`};
     height: 3px;
+    transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
     transition-duration: 500ms;
   }
 
@@ -40,10 +36,7 @@ const menubtn = css`
 `;
 
 export const Hamburger = css`
-  @media (min-width: 768px) {
-    display: none;
-    visibility: hidden;
-  }
+  ${tw`md:hidden md:invisible`};
 
   ${menubtn};
 

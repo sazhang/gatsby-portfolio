@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import tw from "tailwind.macro";
 import PropTypes from "prop-types";
 
+// View of project on main page
 const ProjectDiv = styled("div")`
   ${tw`w-full md:w-1/2 px-2 mb-8 bg-yellow-darker`};
 `;

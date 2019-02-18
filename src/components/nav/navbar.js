@@ -6,7 +6,7 @@ import Navicon from "./navicon";
 import Links from "./links";
 import { MenuBtnDiv, Hamburger, Close } from "./menubtn";
 import { Transition, animated } from "react-spring/renderprops";
-import BlockLinks from "./blocklinks"
+import NavOverlay from "./navoverlay";
 
 // Responsive menu w/ animated hamburger icon - mx-5 sm:mx-8 lg:mx-16
 const Nav = styled.nav`
@@ -14,14 +14,7 @@ const Nav = styled.nav`
 `;
 
 const Overlay = styled(animated.div)`
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: rgb(0, 0, 0);
-  overflow: hidden;
+  ${tw`h-full w-full fixed z-1 pin-t pin-l bg-black-dark overflow-hidden`};
   will-change: transform, opacity;
 `;
 
@@ -31,10 +24,7 @@ const LinkDiv = styled.div`
 
 const Inline = css`
   a {
-    display: inline-block;
-    @media (min-width: 768px) {
-      margin: 0 0.5rem;
-    }
+    ${tw`md:my-0 md:mx-2 inline-block`};
   }
 `;
 
@@ -62,22 +52,24 @@ class Navbar extends Component {
             <span />
           </div>
         </MenuBtnDiv>
-        <LinkDiv>
-          <Links style={Inline} />
-        </LinkDiv>
+        {!this.state.show && (
+          <LinkDiv>
+            <Links style={Inline} />
+          </LinkDiv>
+        )}
         <Transition
           native
           items={this.state.show}
           from={{ height: "0%" }}
           enter={[{ height: "100%" }]}
           leave={{ height: "0%" }}
-          config={{ tension: 10, friction: 5 }}
+          config={{ tension: 8, friction: 4 }}
         >
           {show =>
             show &&
             (props => (
               <Overlay style={props}>
-                <BlockLinks toggle={this.state.show} />
+                <NavOverlay toggle={this.state.show} />
               </Overlay>
             ))
           }

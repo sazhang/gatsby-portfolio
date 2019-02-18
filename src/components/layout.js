@@ -3,14 +3,13 @@ import styled from "@emotion/styled";
 import { Global, css } from "@emotion/core";
 import { StaticQuery, graphql } from "gatsby";
 import tw from "tailwind.macro";
-import { bgColor, textColor } from "../utils/globalstyles";
 import Navbar from "./nav/navbar";
-import Connect from "../components/connect";
+import Connect from "./footer/connect";
 import Background from "./background";
 
-// Overall layout
+// Overall layout -
 const MainDiv = styled("div")`
-  ${tw`flex flex-col mx-auto overflow-hidden min-h-screen relative z-0 pb-20`};
+  ${tw`flex flex-col mx-auto overflow-hidden min-h-screen relative z-0 pb-32`};
 `;
 
 export default ({ children }) => (
@@ -30,26 +29,24 @@ export default ({ children }) => (
           styles={css`
             html,
             body {
-              background-color: ${bgColor};
-              color: ${textColor};
-              width: 100%;
-              height: 100%;
-              margin: 0 auto;
-              padding: 0;
+              ${tw`w-full h-full p-0 my-0 mx-auto bg-mainbgcolor text-maintxtcolor`};
             }
             a {
-              text-decoration: none;
-              cursor: pointer;
-              color: ${textColor};
+              ${tw`no-underline	cursor-pointer text-maintxtcolor`};
             }
             button {
-              cursor: pointer;
-              background: none;
-              border: none;
-              border-color: transparent;
-              text-decoration: none;
-              &:focus {
-                outline: 0;
+              ${tw`no-underline	cursor-pointer border-none border-transparent bg-transparent focus:outline-none`};
+            }
+            p {
+              ${tw`text-sm sm:text-base mx-auto my-2`};
+            }
+            h1 {
+              ${tw`mb-4 text-4xl sm:text-5xl bg-blue-darker`};
+            }
+            ul {
+              ${tw`mb-0`};
+              li {
+                ${tw`m-0`};
               }
             }
           `}

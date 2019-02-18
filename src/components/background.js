@@ -1,19 +1,15 @@
 import { React } from "react";
 import styled from "@emotion/styled";
+import tw from "tailwind.macro";
 
 // Navbar icon that leads to home
 const Container = styled.div`
-  display: flex;
-  position: absolute;
+${tw`flex absolute w-full h-full`};
   z-index: -1;
-  width: 100%;
-  height: 100%;
-  opacity: 0.5;
 
   div {
-    display: block;
-    width: 100%;
-    border-left: 1px solid #909090;
+    ${tw`block w-full opacity-50 border-maintxtcolor`};
+    border-left: 1px solid;
   }
 
   div:nth-of-type(1) {

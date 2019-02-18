@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import tw from "tailwind.macro";
-import { SectionHeader, Section, Div, bgColor } from "../utils/globalstyles";
 import Noisify from "../images/noisified.png";
 import { useSpring, animated } from "react-spring";
-import Background from "./background"
 
 // Landing section
 const BackgroundImg = css`
@@ -37,7 +35,7 @@ class Landing extends Component {
     return (
       <Container>
         <Full>
-          <Animate />
+          
         </Full>
       </Container>
     );

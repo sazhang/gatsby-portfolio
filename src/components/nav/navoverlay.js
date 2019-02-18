@@ -2,29 +2,22 @@ import React from "react";
 import { useTrail, animated } from "react-spring";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
+import tw from "tailwind.macro";
 import Navlink from "./navlink";
 
 // Links that appear in the nav overlay
 const Block = css`
-  text-align: center;
-  position: relative;
+  ${tw`w-full relative text-center`};
   top: 25%;
-  width: 100%;
 `;
 
 const Links = styled(animated.div)`
-  position: relative;
-  width: 100%;
+  ${tw`w-full relative`};
   height: 80px;
   line-height: 80px;
   a {
-    margin: 0 auto;
-    font-size: 2.25rem;
-    @media (min-width: 576px) {
-      font-size: 3rem;
-    }
+    ${tw`my-0 mx-auto text-4xl sm:text-5xl overflow-hidden`};
     will-change: transform, opacity;
-    overflow: hidden;
   }
 `;
 
@@ -37,13 +30,14 @@ const items = [
 
 const config = { mass: 5, tension: 2000, friction: 200 };
 
-function BlockLinks({ toggle }) {
+function NavOverlay({ toggle }) {
   const trail = useTrail(items.length, {
     config,
     opacity: toggle ? 1 : 0,
     x: toggle ? 0 : 20,
     height: toggle ? 80 : 0,
-    from: { opacity: 0, x: 20, height: 0 }
+    from: { opacity: 0, x: 20, height: 0 },
+    reverse: !toggle
   });
 
   return (
@@ -63,4 +57,4 @@ function BlockLinks({ toggle }) {
   );
 }
 
-export default BlockLinks;
+export default NavOverlay;
