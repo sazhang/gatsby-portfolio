@@ -4,15 +4,15 @@ import tw from "tailwind.macro";
 
 // Global styles
 export const Section = styled.div`
-  ${tw`flex flex-wrap w-auto my-4 mx-5 sm:mx-8 lg:mx-16 items-center`};
+  ${tw`flex h-full justify-center md:items-center`};
 `;
 
-export const Viewport = styled.div`
-  ${tw`min-h-screen flex flex-wrap justify-center items-center`};
+export const Container = styled.div`
+  ${tw`w-full mx-5 sm:mx-8 md:mx-12 lg:mx-16 xl:max-w-2xl`};
 `;
 
-export const FullWDiv = styled.div`
-  ${tw`w-full`};
+export const LayerStyle = css`
+  ${tw`w-full h-full`};
 `;
 
 // Link styles

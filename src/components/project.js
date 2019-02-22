@@ -4,29 +4,30 @@ import { Link } from "gatsby";
 import tw from "tailwind.macro";
 import PropTypes from "prop-types";
 
-// View of project on main page
-const ProjectDiv = styled("div")`
-  ${tw`w-full md:w-1/2 px-2 mb-8 bg-yellow-darker`};
+// View of project on main page w-full md:w-1/2 px-2 bg-purple-darkest items-center justify-center
+const ProjectCard = styled.div`
+  ${tw`mx-auto`};
 `;
 
-const Img = styled("img")`
-  ${tw`mb-2 w-auto h-auto`};
+const Img = styled.img`
+  ${tw`mb-0 block h-full w-full max-w-sm md:max-w-full`};
 `;
 
-const TitleStyle = styled("span")`
-  ${tw`hover:text-grey-dark font-semibold text-lg sm:text-2xl md:text-xl lg:text-2xl`};
+// hover:text-grey-dark
+const Title = styled.h2`
+  ${tw`mb-0`};
 `;
 
 const Project = ({ path, title, num }) => (
-  <ProjectDiv>
+  <ProjectCard>
     <Img
       src="https://2.bp.blogspot.com/-BMP2l6Hwvp4/TiAxeGx4CTI/AAAAAAAAD_M/XlC_mY3SoEw/s1600/panda-group-eating-bamboo.jpg"
       alt="Group of pandas eating bamboo"
     />
-    <Link to={path}>
-      <TitleStyle>{title}</TitleStyle>
-    </Link>
-  </ProjectDiv>
+    {/* <Link to={path}> */}
+    <Title>{title}</Title>
+    {/* </Link> */}
+  </ProjectCard>
 );
 
 export default Project;

@@ -8,13 +8,13 @@ import { MenuBtnDiv, Hamburger, Close } from "./menubtn";
 import { Transition, animated } from "react-spring/renderprops";
 import NavOverlay from "./navoverlay";
 
-// Responsive menu w/ animated hamburger icon - mx-5 sm:mx-8 lg:mx-16
+// Responsive menu w/ animated hamburger icon  
 const Nav = styled.nav`
-  ${tw`flex items-center justify-between flex-wrap py-3`};
+  ${tw`flex items-center justify-between flex-wrap py-3 mx-6`};
 `;
 
 const Overlay = styled(animated.div)`
-  ${tw`h-full w-full fixed z-1 pin-t pin-l bg-black-dark overflow-hidden`};
+  ${tw`h-full w-full fixed z-100 pin-t pin-l bg-black-dark overflow-hidden`};
   will-change: transform, opacity;
 `;
 

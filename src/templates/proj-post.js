@@ -1,8 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
+import styled from "@emotion/styled";
 import { css } from "@emotion/core";
+import tw from "tailwind.macro";
 import Layout from "../components/layout";
-import { Section, FullWDiv } from "../utils/globalstyles";
+import { Section, Container } from "../utils/globalstyles";
+import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 
 // Layout for each project case study
 const Paragraph = css`
@@ -11,14 +14,28 @@ const Paragraph = css`
   }
 `;
 
+const FullWDiv = styled.div`
+  ${tw`w-full`}
+`;
+
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
     <Layout>
-      <Section>
-        <h1>{post.frontmatter.title}</h1>
-        <FullWDiv css={Paragraph} dangerouslySetInnerHTML={{ __html: post.html }} />
-      </Section>
+      <Parallax pages={1}>
+        <ParallaxLayer offset={0} speed={0.2}>
+          <h1>h</h1>
+          <Section>
+            <Container>
+              <h1>{post.frontmatter.title}</h1>
+              <FullWDiv
+                css={Paragraph}
+                dangerouslySetInnerHTML={{ __html: post.html }}
+              />
+            </Container>
+          </Section>
+        </ParallaxLayer>
+      </Parallax>
     </Layout>
   );
 };

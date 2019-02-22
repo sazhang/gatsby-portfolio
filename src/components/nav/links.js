@@ -5,9 +5,9 @@ import Navlink from "./navlink";
 // Navigation links
 const Links = ({ style }) => (
   <div css={style}>
-    <Navlink link="/" name="Projects" />
-    <Navlink link="/" name="About" />
-    <Navlink link="/" name="Connect" />
+    <Navlink link="/#projects" name="Projects" />
+    <Navlink link="/#about" name="About" />
+    <Navlink link="/#connect" name="Connect" />
     <Navlink link="/" name="Resume" />
   </div>
 );

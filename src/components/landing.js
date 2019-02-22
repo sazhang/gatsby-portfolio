@@ -1,25 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import tw from "tailwind.macro";
-import Noisify from "../images/noisified.png";
 import { useSpring, animated } from "react-spring";
-
-// Landing section
-const BackgroundImg = css`
-  background-image: url(${Noisify});
-  background-size: 100% 100%;
-  min-height: 100vh;
-  width: 100%;
-`;
-
-const Full = styled("div")`
-  ${tw`w-full bg-pink-darker`};
-`;
-
-const Container = styled("div")`
-  ${tw`min-h-screen `};
-`;
+import { Section, Container } from "../utils/globalstyles";
+import { ParallaxLayer } from "react-spring/renderprops-addons";
+import { Spring } from "react-spring/renderprops";
 
 const AnimatedHeader = styled(animated.h1)`
   font-size: 2.25rem;
@@ -27,19 +14,16 @@ const AnimatedHeader = styled(animated.h1)`
 
 function Animate() {
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
-  return <AnimatedHeader style={props}>hello</AnimatedHeader>;
+  return <animated.h1 style={props}>hello</animated.h1>;
 }
 
-class Landing extends Component {
-  render() {
-    return (
-      <Container>
-        <Full>
-          
-        </Full>
-      </Container>
-    );
-  }
-}
+// Landing section
+const Landing = () => (
+  <Section>
+    <Container>
+      <h1>landing</h1>
+    </Container>
+  </Section>
+);
 
 export default Landing;

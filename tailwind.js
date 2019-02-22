@@ -24,7 +24,7 @@ View the full documentation at https://tailwindcss.com.
 |
 */
 
-let defaultConfig = require('tailwindcss/defaultConfig')()
+//let defaultConfig = require('tailwindcss/defaultConfig')()
 
 
 /*
@@ -48,6 +48,16 @@ let colors = {
   'mainbgcolor': '#01172d',
   'maintxtcolor': '#ced9f9',
   'black-dark': '#0e0f0f',
+  'midnight-darker': '#011A33',
+  'midnight-dark': '#011E3A',
+
+  /* palette from dribble */
+  'sleek-black': '#040508',
+  'steel-grey': '#42455E',
+  'off-white': '#E7EDEE',
+  'corp-blue': '#2B5DCB',
+  'light-grey': '#A2ADBA',
+  'muted-lavender': '#7D7DA8',
 
   'transparent': 'transparent',
 
