@@ -6,7 +6,7 @@ import { ParallaxLayer } from "react-spring/renderprops-addons";
 
 // Parallax layer
 const Container = styled(ParallaxLayer)`
-  ${tw`absolute w-full h-full bg-teal-darker`};
+  ${tw`absolute w-full h-full`};
 `;
 
 const Layer = ({ children, offset, speed, factor }) => (

@@ -31,20 +31,18 @@ export default ({ children, pages }) => (
             }
             html {
               text-rendering: optimizeLegibility;
-              
               box-sizing: border-box;
               -ms-overflow-style: scrollbar;
               -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-              background-color: #161719;
               -webkit-font-smoothing: antialiased;
               -moz-osx-font-smoothing: grayscale;
             }
             html,
             body {
-              ${tw`w-full h-full p-0 m-0 bg-sleek-black text-off-white md:text-lg overflow-hidden`};
+              ${tw`w-full h-full p-0 m-0 md:text-lg overflow-hidden text-off-white bg-sleek-black`};
             }
             a {
-              ${tw`no-underline	cursor-pointer text-off-white font-sans`};
+              ${tw`no-underline	cursor-pointer font-sans text-off-white`};
             }
             button {
               ${tw`no-underline	cursor-pointer border-none border-transparent bg-transparent focus:outline-none`};
@@ -63,12 +61,10 @@ export default ({ children, pages }) => (
             }
           `}
         />
+        {/* <Background /> */}
         <Parallax pages={pages}>
-          <Layer offset={0} speed={0} factor={pages}>
-            <Background />
-          </Layer>
           {children}
-          <Layer offset={`${pages - 0.25}`} speed={0} factor={0.25}>
+          <Layer offset={`${pages - 0.1}`} speed={0} factor={0.1}>
             <Connect />
           </Layer>
           <Layer offset={0} speed={0} factor={1}>

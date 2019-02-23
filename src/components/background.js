@@ -4,26 +4,20 @@ import tw from "tailwind.macro";
 
 // Background with lines
 const Container = styled.div`
-${tw`flex w-full h-full xl:max-w-2xl justify-center mx-auto`};
+  ${tw`flex w-full h-full fixed pin`};
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%,-50%,0) rotate3d(0,0,1,45deg);
   div {
-    ${tw`block w-full opacity-50 border-off-white`};
+    ${tw`block h-full w-full`};
+    min-width: 240px;
     border-left: 1px solid;
-  }
-  div:nth-of-type(1) {
-    border: none;
-    @media (min-width: 1200px) {
-      border-left: 1px solid;
-    }
-  }
-  div:nth-of-type(6) {
-    @media (min-width: 1200px) {
-      border-right: 1px solid;
-    }
   }
 `;
 
 export default () => (
   <Container>
+    <div />
     <div />
     <div />
     <div />

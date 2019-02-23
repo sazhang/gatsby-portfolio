@@ -8,7 +8,7 @@ export const Section = styled.div`
 `;
 
 export const Container = styled.div`
-  ${tw`w-full mx-5 sm:mx-8 md:mx-12 lg:mx-16 xl:max-w-2xl`};
+  ${tw`w-full mx-5 sm:mx-8 md:mx-12 lg:mx-16 xl:max-w-2xl bg-indigo-darker`};
 `;
 
 export const LayerStyle = css`

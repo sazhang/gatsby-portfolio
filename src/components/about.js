@@ -17,7 +17,7 @@ const BoxDiv = styled.div`
 
 // p-2 sm:p-4 md:p-6 text-sleek-black bg-light-grey
 const InnerBox = styled.div`
-  ${tw`w-full p-2 sm:p-4 md:p-6 text-sleek-black bg-light-grey justify-center items-center`};
+  ${tw`w-full p-2 sm:p-4 md:p-6 justify-center items-center`};
 `;
 
 const moreInfo =

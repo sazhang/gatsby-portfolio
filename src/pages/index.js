@@ -29,7 +29,7 @@ export default ({ data }) => {
 
   return (
     <>
-      <Layout pages={3.75}>
+      <Layout pages={3.6}>
         <Layer offset={0} speed={0.4} factor={1}>
           <Landing />
         </Layer>
