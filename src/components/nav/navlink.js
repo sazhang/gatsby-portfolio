@@ -6,7 +6,7 @@ import { Gradient, LinkStyle } from "../../utils/globalstyles";
 // Navbar links
 const Navlink = ({ link, name }) => (
   <Link to={link} css={LinkStyle}>
-    <span css={Gradient}>{name}</span>
+    <span>{name}</span>
   </Link>
 );
 

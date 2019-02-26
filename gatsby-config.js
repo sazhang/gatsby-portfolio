@@ -1,22 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: `SZ`
+    title: `Sarah Zhang Portfolio`
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
       },
     },
     `gatsby-transformer-remark`,
-    /* {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    }, */
-    `gatsby-plugin-emotion`
+    `gatsby-plugin-emotion`,
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp'
   ]
 };

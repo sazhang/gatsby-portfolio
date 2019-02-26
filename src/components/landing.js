@@ -5,19 +5,30 @@ import { css } from "@emotion/core";
 import tw from "tailwind.macro";
 import { useSpring, animated, config } from "react-spring";
 import { Section, Container } from "../utils/globalstyles";
-import { ParallaxLayer } from "react-spring/renderprops-addons";
 import { Spring } from "react-spring/renderprops";
-
-const AnimatedHeader = styled(animated.h1)`
-  font-size: 2.25rem;
-`;
 
 // Landing section
 const Landing = () => (
-  <Section>
+  <Section
+    css={css`
+      min-height: 100vh;
+    `}
+  >
     <Container>
-      <h1>landing</h1>
-      
+      <div
+        css={css`
+          ${tw`max-w-md`};
+        `}
+      >
+        <h1>Hey, I'm Sarah.</h1>
+        <h3
+          css={css`
+            ${tw`font-thin`}
+          `}
+        >
+          creative developer + ux enthusiast
+        </h3>
+      </div>
     </Container>
   </Section>
 );

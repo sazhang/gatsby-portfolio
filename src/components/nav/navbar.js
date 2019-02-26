@@ -1,31 +1,23 @@
 import { React, Component } from "react";
 import tw from "tailwind.macro";
-import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import Navicon from "./navicon";
-import Links from "./links";
 import { MenuBtnDiv, Hamburger, Close } from "./menubtn";
 import { Transition, animated } from "react-spring/renderprops";
 import NavOverlay from "./navoverlay";
 
-// Responsive menu w/ animated hamburger icon  
+// Responsive menu w/ animated hamburger icon
 const Nav = styled.nav`
-  ${tw`flex items-center justify-between flex-wrap py-3 mx-6`};
+  ${tw`flex fixed pin-t pin-l pin-r justify-center p-4`};
+`;
+
+const Container = styled.nav`
+  ${tw`flex w-full items-center justify-between flex-wrap`};
 `;
 
 const Overlay = styled(animated.div)`
-  ${tw`h-full w-full fixed z-100 pin-t pin-l bg-black-dark overflow-hidden`};
+  ${tw`h-full w-full fixed pin-t pin-l bg-muted-black`};
   will-change: transform, opacity;
-`;
-
-const LinkDiv = styled.div`
-  ${tw`hidden md:flex md:items-center w-full md:w-auto`};
-`;
-
-const Inline = css`
-  a {
-    ${tw`md:my-0 md:mx-2 inline-block`};
-  }
 `;
 
 class Navbar extends Component {
@@ -44,19 +36,23 @@ class Navbar extends Component {
   render() {
     return (
       <Nav>
-        <Navicon />
-        <MenuBtnDiv>
-          <div css={this.state.show ? Close : Hamburger} onClick={this.toggle}>
-            <span />
-            <span />
-            <span />
+        <Container>
+          <div>
+            <Navicon />
           </div>
-        </MenuBtnDiv>
-        {!this.state.show && (
-          <LinkDiv>
-            <Links style={Inline} />
-          </LinkDiv>
-        )}
+
+          <MenuBtnDiv>
+            <div
+              css={this.state.show ? Close : Hamburger}
+              onClick={this.toggle}
+            >
+              <span />
+              <span />
+              <span />
+            </div>
+          </MenuBtnDiv>
+        </Container>
+
         <Transition
           native
           items={this.state.show}

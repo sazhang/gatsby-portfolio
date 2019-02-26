@@ -45,14 +45,14 @@ View the full documentation at https://tailwindcss.com.
 
 let colors = {
 
-  'mainbgcolor': '#01172d',
-  'maintxtcolor': '#ced9f9',
-  'black-dark': '#0e0f0f',
+  'another-night': '#01172d',
+  'light-lavender': '#ced9f9',
   'midnight-darker': '#011A33',
   'midnight-dark': '#011E3A',
+  'goldish': '#FDB13A',
 
   /* palette from dribble */
-  'sleek-black': '#040508',
+  'muted-black': '#0F0814',
   'steel-grey': '#42455E',
   'off-white': '#E7EDEE',
   'corp-blue': '#2B5DCB',
@@ -210,6 +210,7 @@ module.exports = {
 
   fonts: {
     'sans': [
+      'Montserrat',
       'system-ui',
       'BlinkMacSystemFont',
       '-apple-system',
@@ -224,6 +225,7 @@ module.exports = {
       'sans-serif',
     ],
     'serif': [
+      'Lora',
       'Constantia',
       'Lucida Bright',
       'Lucidabright',
@@ -276,6 +278,7 @@ module.exports = {
     '3xl': '1.875rem',  // 30px
     '4xl': '2.25rem',   // 36px
     '5xl': '3rem',      // 48px
+    'xxl': '4rem',
   },
 
 

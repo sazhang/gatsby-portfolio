@@ -2,14 +2,15 @@ import React from "react";
 import { Global, css } from "@emotion/core";
 import { StaticQuery, graphql } from "gatsby";
 import tw from "tailwind.macro";
+import "typeface-montserrat";
+import "typeface-lora";
+import styled from "@emotion/styled";
 import Background from "./background";
 import Navbar from "../components/nav/navbar";
 import Connect from "../components/footer/connect";
-import Layer from "../components/layer";
-import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 
 // Overall layout -
-export default ({ children, pages }) => (
+export default ({ children }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -39,38 +40,55 @@ export default ({ children, pages }) => (
             }
             html,
             body {
-              ${tw`w-full h-full p-0 m-0 md:text-lg overflow-hidden text-off-white bg-sleek-black`};
+              ${tw`w-full h-full p-0 m-0 text-off-white font-sans`};
             }
             a {
-              ${tw`no-underline	cursor-pointer font-sans text-off-white`};
+              ${tw`no-underline	cursor-pointer text-off-white hover:text-goldish`};
             }
             button {
               ${tw`no-underline	cursor-pointer border-none border-transparent bg-transparent focus:outline-none`};
             }
             p {
-              ${tw`mx-auto my-2 font-sans`};
+              ${tw`my-0 max-w-xs sm:max-w-md px-2 sm:px-3 md:px-6 text-grey text-xs sm:text-base md:text-lg`};
+              &:nth-of-type(even) {
+                ${tw`mt-5`};
+              }
+            }
+            strong {
+              ${tw`text-off-white`};
+              text-decoration: underline;
+              text-decoration-color: #fdb13a;
+            }
+            h1, h2, h3 {
+              ${tw`my-2 font-sans`};
             }
             h1 {
-              ${tw`my-4 text-4xl sm:text-5xl font-serif`};
+              ${tw`text-4xl md:text-5xl lg:text-xxl`};
             }
-            ul {
-              ${tw`mt-0 mb-2 font-sans`};
-              li {
-                ${tw`m-0`};
-              }
+            h2 {
+              ${tw`text-xl sm:text-2xl`};
+            }
+            h3 {
+              ${tw`text-base md:text-xl lg:text-2xl`};
             }
           `}
         />
-        {/* <Background /> */}
-        <Parallax pages={pages}>
+
+        <div
+          css={css`
+            ${tw`relative min-h-screen`};
+            background-image: linear-gradient(
+              109.6deg,
+              rgba(36, 45, 57, 1) 11.2%,
+              rgba(16, 37, 60, 1) 51.2%,
+              rgba(0, 0, 0, 1) 98.6%
+            );
+          `}
+        >
+          <Navbar />
           {children}
-          <Layer offset={`${pages - 0.1}`} speed={0} factor={0.1}>
-            <Connect />
-          </Layer>
-          <Layer offset={0} speed={0} factor={1}>
-            <Navbar />
-          </Layer>
-        </Parallax>
+          <Connect />
+        </div>
       </>
     )}
   />

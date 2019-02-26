@@ -3,20 +3,21 @@ import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 
 // Animated hamburger icon
-export const MenuBtnDiv = styled("div")`
-  ${tw`block relative border-none outline-none flex items-center mr-8`};
+export const MenuBtnDiv = styled.div`
+  ${tw`flex relative border-none outline-none mb-1 mr-2 sm:mr-4`};
 `;
 
 const menubtn = css`
   width: 30px;
   height: 25px;
-  ${tw`inline-block absolute cursor-pointer`};
+  ${tw`inline-block cursor-pointer`};
 
   span {
-    ${tw`bg-maintxtcolor absolute w-full`};
+    ${tw`bg-off-white absolute w-full`};
     height: 3px;
     transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
     transition-duration: 500ms;
+    border-radius: 9px;
   }
 
   span:nth-of-type(1) {
@@ -36,8 +37,6 @@ const menubtn = css`
 `;
 
 export const Hamburger = css`
-  ${tw`md:hidden md:invisible`};
-
   ${menubtn};
 
   &:hover span:nth-of-type(1) {

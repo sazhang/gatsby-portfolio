@@ -5,11 +5,11 @@ import styled from "@emotion/styled";
 import logo from "../../images/polyz.png";
 
 // Navbar icon that leads to home
-const IconBtn = styled("button")`
-  ${tw`block flex items-center`};
+const IconBtn = styled.button`
+  ${tw`items-center`};
 `;
 
-const Icon = styled("img")`
+const Icon = styled.img`
   ${tw`h-8 w-8 m-0 p-0`};
 `;
 

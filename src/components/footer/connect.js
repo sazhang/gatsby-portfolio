@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import tw from "tailwind.macro";
 import Github from "./icons/github";
@@ -6,33 +7,29 @@ import Email from "./icons/email";
 import Twitter from "./icons/twitter";
 import Linkedin from "./icons/linkedin";
 import Insta from "./icons/insta";
-import { ParallaxLayer } from "react-spring/renderprops-addons";
-import { Section, Container } from "../../utils/globalstyles";
 
 // Let's connect section
 const Social = css`
-  ${tw`absolute pin-b mb-2 sm:mb-4`};
+  ${tw`flex fixed pin-b md:pin-l sm:mr-0 sm:block sm:ml-6 mb-2 sm:mb-6 w-full justify-center sm:w-auto`};
   a {
-    ${tw`pr-4 sm:pr-8`};
-  }
-  a:nth-of-type(5) {
-    ${tw`pr-0`};
+    ${tw`inline-block pr-4 sm:block sm:mt-4`};
+    &:nth-of-type(5) {
+      ${tw`pr-0`};
+    }
   }
   svg {
-    ${tw`sm:h-8 sm:w-8`};
+    ${tw`h-6 w-6`};
   }
 `;
 
 const Connect = () => (
-  <Section>
-    <div css={Social}>
-      <Email />
-      <Linkedin />
-      <Twitter />
-      <Insta />
-      <Github />
-    </div>
-  </Section>
+  <div css={Social}>
+    <Email />
+    <Linkedin />
+    <Twitter />
+    <Insta />
+    <Github />
+  </div>
 );
 
 export default Connect;
