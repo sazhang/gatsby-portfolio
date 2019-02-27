@@ -9,7 +9,7 @@ const About = () => (
     <Container
       css={css`
         p {
-          ${tw`mx-auto`};
+          ${tw`mx-auto max-w-xs sm:max-w-md px-2 sm:px-3 md:px-6 `};
         }
       `}
     >

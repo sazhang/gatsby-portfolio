@@ -4,8 +4,6 @@ import { StaticQuery, graphql } from "gatsby";
 import tw from "tailwind.macro";
 import "typeface-montserrat";
 import "typeface-lora";
-import styled from "@emotion/styled";
-import Background from "./background";
 import Navbar from "../components/nav/navbar";
 import Connect from "../components/footer/connect";
 
@@ -40,16 +38,16 @@ export default ({ children }) => (
             }
             html,
             body {
-              ${tw`w-full h-full p-0 m-0 text-off-white font-sans`};
+              ${tw`w-full h-full p-0 m-0 text-off-white font-sans bg-muted-black overflow-x-hidden`};
             }
             a {
               ${tw`no-underline	cursor-pointer text-off-white hover:text-goldish`};
             }
             button {
-              ${tw`no-underline	cursor-pointer border-none border-transparent bg-transparent focus:outline-none`};
+              ${tw`cursor-pointer focus:outline-none font-sans border-none`};
             }
             p {
-              ${tw`my-0 max-w-xs sm:max-w-md px-2 sm:px-3 md:px-6 text-grey text-xs sm:text-base md:text-lg`};
+              ${tw`my-0 text-grey text-xs sm:text-base lg:text-lg leading-normal`};
               &:nth-of-type(even) {
                 ${tw`mt-5`};
               }
@@ -59,17 +57,17 @@ export default ({ children }) => (
               text-decoration: underline;
               text-decoration-color: #fdb13a;
             }
-            h1, h2, h3 {
-              ${tw`my-2 font-sans`};
-            }
             h1 {
-              ${tw`text-4xl md:text-5xl lg:text-xxl`};
-            }
-            h2 {
-              ${tw`text-xl sm:text-2xl`};
+              ${tw`text-4xl sm:text-5xl lg:text-xxl my-0`};
             }
             h3 {
-              ${tw`text-base md:text-xl lg:text-2xl`};
+              ${tw`text-base sm:text-xl lg:text-2xl font-thin my-2`};
+            }
+            h4 {
+              ${tw`text-sm lg:text-base font-serif font-normal italic my-2`};
+            }
+            h5 {
+              ${tw`text-xs lg:text-base font-thin text-grey my-0`};
             }
           `}
         />

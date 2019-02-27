@@ -12,7 +12,7 @@ import Landing from "../components/landing";
 
 // Main page
 const Wrapper = styled.div`
-  ${tw`flex flex-wrap -mx-3 md:-mx-4 lg:-mx-6 my-12 sm:my-20 justify-center sm:justify-start`};
+  ${tw`flex flex-wrap -mx-3 md:-mx-4 lg:-mx-6 my-12 sm:my-20 justify-center sm:justify-start z-1`};
   div:nth-of-type(even) {
     ${tw`sm:mt-20 sm:mb-5`};
   }
@@ -22,7 +22,7 @@ const Index = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <>
-      <Layout pages={3}>
+      <Layout>
         <Landing />
         <About />
         <Section>

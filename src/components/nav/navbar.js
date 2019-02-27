@@ -1,6 +1,7 @@
 import { React, Component } from "react";
 import tw from "tailwind.macro";
 import styled from "@emotion/styled";
+import { css } from "@emotion/core";
 import Navicon from "./navicon";
 import { MenuBtnDiv, Hamburger, Close } from "./menubtn";
 import { Transition, animated } from "react-spring/renderprops";
@@ -37,7 +38,7 @@ class Navbar extends Component {
     return (
       <Nav>
         <Container>
-          <div>
+          <div css={css`z-index: 40;`}>
             <Navicon />
           </div>
 
@@ -58,7 +59,7 @@ class Navbar extends Component {
           items={this.state.show}
           from={{ height: "0%" }}
           enter={[{ height: "100%" }]}
-          leave={{ height: "0%" }}
+          leave={{ height: "0%", delay: 300 }}
           config={{ tension: 8, friction: 4 }}
         >
           {show =>

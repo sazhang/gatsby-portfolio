@@ -6,7 +6,7 @@ import logo from "../../images/polyz.png";
 
 // Navbar icon that leads to home
 const IconBtn = styled.button`
-  ${tw`items-center`};
+  ${tw`items-center bg-transparent`};
 `;
 
 const Icon = styled.img`

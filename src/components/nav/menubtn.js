@@ -50,9 +50,7 @@ export const Hamburger = css`
 
 export const Close = css`
   ${menubtn};
-
   z-index: 40;
-
   span:nth-of-type(1) {
     transform: rotate(45deg);
     top: 10px;

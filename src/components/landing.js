@@ -21,13 +21,7 @@ const Landing = () => (
         `}
       >
         <h1>Hey, I'm Sarah.</h1>
-        <h3
-          css={css`
-            ${tw`font-thin`}
-          `}
-        >
-          creative developer + ux enthusiast
-        </h3>
+        <h3>creative developer + ux enthusiast</h3>
       </div>
     </Container>
   </Section>
