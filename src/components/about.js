@@ -25,7 +25,7 @@ const About = () => (
         I'm currently finishing my last semester as a computer science &amp;
         cognitive psychology major. In the meantime, you can find me binging
         podcasts, learning web dev, &amp; playing around in Adobe CC. Check out
-        what I'm working on.
+        my <a href="/" target="_blank" rel="noopener noreferrer">resume</a> and side projects.
       </p>
     </Container>
   </Section>

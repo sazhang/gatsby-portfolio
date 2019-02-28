@@ -9,7 +9,7 @@ import { LinkStyle } from "../../utils/globalstyles";
 // Links that appear in the nav overlay
 const Block = css`
   ${tw`w-full relative text-center`};
-  top: 20%;
+  top: 10%;
 `;
 
 const Links = styled(animated.div)`
@@ -17,7 +17,7 @@ const Links = styled(animated.div)`
   height: 60px;
   line-height: 60px;
   a {
-    ${tw`my-0 mx-auto text-4xl sm:text-5xl overflow-hidden`};
+    ${tw`my-0 mx-auto text-4xl sm:text-5xl`};
     will-change: transform, opacity;
   }
 
@@ -40,7 +40,12 @@ const items = [
   <Navlink link="/ufosights" name="ufo sightings" />,
   <Navlink link="/redesigns" name="app redesign" />,
   <h3>CHECK OUT MY</h3>,
-  <Navlink link="/" name="resume" />
+  <a css={LinkStyle} href="/" target="_blank" rel="noopener noreferrer">resume</a>,
+  <a css={LinkStyle} href="https://github.com/sazhang" target="_blank" rel="noopener noreferrer">github</a>,
+  <h3>LET'S CONNECT</h3>,
+  <a css={LinkStyle} href="mailto:zhang.sar@husky.neu.edu">email</a>,
+  <a css={LinkStyle} href="https://www.linkedin.com/in/szhang96/" target="_blank" rel="noopener noreferrer">linkedin</a>,
+  <a css={LinkStyle} href="https://twitter.com/szhangster" target="_blank" rel="noopener noreferrer">twitter</a>,
 ];
 
 const config = { mass: 5, tension: 2000, friction: 200 };
@@ -51,7 +56,7 @@ function NavOverlay({ toggle }) {
     opacity: toggle ? 1 : 0,
     x: toggle ? 0 : 20,
     height: toggle ? 60 : 0,
-    delay: toggle ? 500 : 0,
+    delay: toggle ? 300 : 0,
     from: { opacity: 0, x: 20, height: 0 },
     reverse: !toggle
   });

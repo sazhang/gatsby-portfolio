@@ -5,7 +5,7 @@ import tw from "tailwind.macro";
 // Global styles
 export const Section = styled.div`
   ${tw`flex w-full h-auto justify-center`};
-  min-height: 50vh;
+  min-height: 75vh;
 `;
 
 export const Container = styled.div`
@@ -18,7 +18,7 @@ export const FixedContent = styled.div`
 
 // Link styles
 export const LinkStyle = css`
-  ${tw`text-lg md:text-xl font-semibold`};
+  ${tw`text-lg md:text-xl`};
 `;
 
 const startColor = "#2b5876";

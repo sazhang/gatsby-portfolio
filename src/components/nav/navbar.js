@@ -17,7 +17,7 @@ const Container = styled.nav`
 `;
 
 const Overlay = styled(animated.div)`
-  ${tw`h-full w-full fixed pin-t pin-l bg-muted-black`};
+  ${tw`max-h-screen w-full fixed pin-t pin-l bg-muted-black`};
   will-change: transform, opacity;
 `;
 
@@ -59,7 +59,7 @@ class Navbar extends Component {
           items={this.state.show}
           from={{ height: "0%" }}
           enter={[{ height: "100%" }]}
-          leave={{ height: "0%", delay: 300 }}
+          leave={{ height: "0%", delay: 650 }}
           config={{ tension: 8, friction: 4 }}
         >
           {show =>

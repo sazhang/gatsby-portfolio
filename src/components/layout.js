@@ -38,10 +38,10 @@ export default ({ children }) => (
             }
             html,
             body {
-              ${tw`w-full h-full p-0 m-0 text-off-white font-sans bg-muted-black overflow-x-hidden`};
+              ${tw`w-full h-full p-0 m-0 text-off-white bg-muted-black font-sans overflow-x-hidden`};
             }
             a {
-              ${tw`no-underline	cursor-pointer text-off-white hover:text-goldish`};
+              ${tw`no-underline	cursor-pointer text-off-white hover:text-goldish font-semibold`};
             }
             button {
               ${tw`cursor-pointer focus:outline-none font-sans border-none`};
@@ -71,7 +71,6 @@ export default ({ children }) => (
             }
           `}
         />
-
         <div
           css={css`
             ${tw`relative min-h-screen`};
@@ -83,8 +82,8 @@ export default ({ children }) => (
             );
           `}
         >
-          <Navbar />
           {children}
+          <Navbar />
           <Connect />
         </div>
       </>
