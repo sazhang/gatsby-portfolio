@@ -47,7 +47,7 @@ const InnerDiv = styled.div`
 const ProjectPost = ({ data }) => {
   const post = data.markdownRemark;
   const title = post.frontmatter.title;
-  const url = "http://mysite.com/" + post.frontmatter.path;
+  const url = "https://sarahzhang.co/" + post.frontmatter.path;
   const descrip = post.frontmatter.descrip;
 
   return (
@@ -56,9 +56,10 @@ const ProjectPost = ({ data }) => {
         <meta charSet="utf-8" />
         <meta name="description" content={descrip} />
         <meta name="keywords" content={post.frontmatter.tags || []} />
-        <meta name="author" content="Sarah ZHang" />
+        <meta name="author" content="Sarah Zhang" />
         <title>Sarah Zhang | {title}</title>
         <link rel="canonical" href={url} />
+        <html lang="en" />
       </Helmet>
       <Section>
         <Container>

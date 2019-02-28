@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import { css } from "@emotion/core";
@@ -26,8 +26,10 @@ const Index = ({ data }) => {
       <Layout>
         <Helmet>
           <meta charSet="utf-8" />
+          <meta name="description" content="Sarah Zhang's portfolio website built using Gatsby" />
           <title>Sarah Zhang | Portfolio</title>
-          <link rel="canonical" href="http://mysite.com/example" />
+          <link rel="canonical" href="https://sarahzhang.co/" />
+          <html lang="en" />
         </Helmet>
         <Landing />
         <About />

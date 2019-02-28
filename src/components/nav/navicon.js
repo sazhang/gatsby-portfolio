@@ -14,6 +14,6 @@ const IconBtn = styled.button`
 
 export default () => (
   <Link to="/">
-    <IconBtn />
+    <IconBtn ariaLabel="home" />
   </Link>
 );

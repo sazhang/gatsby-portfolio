@@ -35,6 +35,7 @@ module.exports = {
         display: "standalone",
         icon: "src/images/polyz.png", // This path is relative to the root of the site.
       },
-    }
+    },
+    'gatsby-plugin-offline'
   ]
 };
