@@ -1,6 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
-import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import tw from "tailwind.macro";
 import { useSpring, animated, config } from "react-spring";
@@ -11,7 +9,7 @@ import { Spring } from "react-spring/renderprops";
 const Landing = () => (
   <Section
     css={css`
-      min-height: 100vh;
+      ${tw`min-h-screen`}
     `}
   >
     <Container>

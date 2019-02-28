@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
@@ -45,16 +46,27 @@ const InnerDiv = styled.div`
 
 const ProjectPost = ({ data }) => {
   const post = data.markdownRemark;
+  const title = post.frontmatter.title;
+  const url = "http://mysite.com/" + post.frontmatter.path;
+  const descrip = post.frontmatter.descrip;
 
   return (
     <Layout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <meta name="description" content={descrip} />
+        <meta name="keywords" content={post.frontmatter.tags || []} />
+        <meta name="author" content="Sarah ZHang" />
+        <title>Sarah Zhang | {title}</title>
+        <link rel="canonical" href={url} />
+      </Helmet>
       <Section>
         <Container>
           <TopDiv>
             <TitleDiv>
               <h5>{post.frontmatter.category.toUpperCase()}</h5>
-              <h1>{post.frontmatter.title}</h1>
-              <h4>{post.frontmatter.descrip}</h4>
+              <h1>{title}</h1>
+              <h4>{descrip}</h4>
 
               <ButtonDiv>
                 <Button link={post.frontmatter.site} title={"WEBSITE"} />

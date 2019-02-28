@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet"
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import { css } from "@emotion/core";
@@ -23,6 +24,11 @@ const Index = ({ data }) => {
   return (
     <>
       <Layout>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Sarah Zhang | Portfolio</title>
+          <link rel="canonical" href="http://mysite.com/example" />
+        </Helmet>
         <Landing />
         <About />
         <Section>

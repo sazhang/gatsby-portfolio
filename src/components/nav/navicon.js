@@ -6,17 +6,14 @@ import logo from "../../images/polyz.png";
 
 // Navbar icon that leads to home
 const IconBtn = styled.button`
-  ${tw`items-center bg-transparent`};
-`;
-
-const Icon = styled.img`
-  ${tw`h-8 w-8 m-0 p-0`};
+  ${tw`h-8 w-8 items-center bg-transparent`};
+  background: url(${logo});
+  background-size: contain;
+  background-repeat: no-repeat;
 `;
 
 export default () => (
   <Link to="/">
-    <IconBtn>
-      <Icon src={logo} alt="SZ" />
-    </IconBtn>
+    <IconBtn />
   </Link>
 );
