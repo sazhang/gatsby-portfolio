@@ -9,7 +9,7 @@ import { StaticQuery, graphql } from "gatsby";
 
 // Landing section
 // You can create keyframes for springs and trails
-function Animation() {
+/* function Animation() {
   const props = useSpring({
     to: async next => {
       while (1) {
@@ -20,7 +20,7 @@ function Animation() {
     from: { opacity: 0, color: "red" }
   });
   return <animated.div style={props}>I will fade in</animated.div>;
-}
+} */
 
 const ImgStyle = styled.div`
   ${tw`w-2/5`};
@@ -59,11 +59,9 @@ const Landing = () => (
               <h1>Hey, I'm Sarah.</h1>
               <h3>creative developer + ux enthusiast</h3>
             </div>
-            {/* <ImgStyle>
+            <ImgStyle>
               <Img fluid={data.planet.childImageSharp.fluid} />
-            </ImgStyle> */}
-
-            <Animation />
+            </ImgStyle>
           </div>
         </Container>
       </Section>
