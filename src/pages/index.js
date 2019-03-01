@@ -2,7 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
-import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import tw from "tailwind.macro";
 import { Section, Container } from "../utils/globalstyles";

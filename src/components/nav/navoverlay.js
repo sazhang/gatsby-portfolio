@@ -37,7 +37,7 @@ const items = [
   <Navlink link="/redesigns" name="app redesign" />,
   <h3>CHECK OUT MY</h3>,
   <a css={LinkStyle} href="/" target="_blank" rel="noopener noreferrer">resume</a>,
-  <h3>✌️ LET'S CONNECT 🖖</h3>,
+  <h3>LET'S CONNECT</h3>,
 ];
 
 const config = { mass: 5, tension: 2000, friction: 200 };

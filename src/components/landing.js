@@ -23,7 +23,8 @@ import { StaticQuery, graphql } from "gatsby";
 } */
 
 const ImgStyle = styled.div`
-  ${tw`w-2/5`};
+  ${tw`w-3/5 md:w-2/5`};
+  margin-left: auto;
 `;
 
 const Landing = () => (
@@ -48,12 +49,12 @@ const Landing = () => (
         <Container>
           <div
             css={css`
-              ${tw`flex items-center`};
+              ${tw`flex flex-wrap-reverse items-center`};
             `}
           >
             <div
               css={css`
-                ${tw`w-3/5`};
+                ${tw`w-full md:w-3/5`};
               `}
             >
               <h1>Hey, I'm Sarah.</h1>
