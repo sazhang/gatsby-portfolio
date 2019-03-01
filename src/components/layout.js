@@ -38,13 +38,21 @@ export default ({ children }) => (
             }
             html,
             body {
-              ${tw`w-full h-full p-0 m-0 text-off-white bg-muted-black font-sans overflow-x-hidden`};
+              ${tw`p-0 m-0 text-off-white font-sans overflow-x-hidden`};
+              background-image: linear-gradient(
+                109.6deg,
+                rgba(36, 45, 57, 1) 11.2%,
+                rgba(16, 37, 60, 1) 51.2%,
+                rgba(0, 0, 0, 1) 98.6%
+              );
             }
             a {
-              ${tw`no-underline	cursor-pointer text-off-white hover:text-goldish font-semibold`};
+              ${tw`no-underline	cursor-pointer text-off-white`};
+              transition: 0.3s;
             }
             button {
               ${tw`cursor-pointer focus:outline-none font-sans border-none`};
+              transition: 0.3s;
             }
             p {
               ${tw`my-0 text-grey text-xs sm:text-base lg:text-lg leading-normal`};
@@ -54,8 +62,6 @@ export default ({ children }) => (
             }
             strong {
               ${tw`text-off-white`};
-              text-decoration: underline;
-              text-decoration-color: #fdb13a;
             }
             h1 {
               ${tw`text-4xl sm:text-5xl lg:text-xxl my-0`};
@@ -71,9 +77,8 @@ export default ({ children }) => (
             }
           `}
         />
-        <div
+        <main
           css={css`
-            ${tw`relative min-h-screen`};
             background-image: linear-gradient(
               109.6deg,
               rgba(36, 45, 57, 1) 11.2%,
@@ -85,7 +90,7 @@ export default ({ children }) => (
           {children}
           <Navbar />
           <Connect />
-        </div>
+        </main>
       </>
     )}
   />

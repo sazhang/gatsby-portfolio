@@ -9,7 +9,21 @@ import tw from "tailwind.macro";
 // 404 page
 const ErrorPage = () => (
   <Layout>
-    <Helmet title={"404"} />
+    <Helmet>
+          <meta charSet="utf-8" />
+          <meta
+            name="description"
+            content="404 page for Sarah Zhang's portfolio website"
+          />
+          <meta
+            name="keywords"
+            content="Sarah Zhang, portfolio, personal, Gatsby, React, Tailwind, Emotion"
+          />
+          <meta name="author" content="Sarah Zhang" />
+          <title>404</title>
+          <link rel="canonical" href="https://sarahzhang.co/" />
+          <html lang="en" />
+        </Helmet>
     <Section
       css={css`
         ${tw`min-h-screen`};

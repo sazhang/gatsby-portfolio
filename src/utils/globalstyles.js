@@ -5,7 +5,7 @@ import tw from "tailwind.macro";
 // Global styles
 export const Section = styled.div`
   ${tw`flex w-full h-auto justify-center`};
-  min-height: 75vh;
+  min-height: 50vh;
 `;
 
 export const Container = styled.div`

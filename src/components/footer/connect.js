@@ -11,7 +11,7 @@ import Insta from "./icons/insta";
 const Social = css`
   ${tw`flex fixed pin-b w-full justify-center mb-2 sm:mb-6`};
   a {
-    ${tw`inline-block pr-6`};
+    ${tw`inline-block pr-6 hover:text-goldish`};
     &:nth-of-type(5) {
       ${tw`pr-0`};
     }

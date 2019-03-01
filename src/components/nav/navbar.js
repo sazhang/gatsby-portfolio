@@ -59,8 +59,8 @@ class Navbar extends Component {
           items={this.state.show}
           from={{ height: "0%" }}
           enter={[{ height: "100%" }]}
-          leave={{ height: "0%", delay: 650 }}
-          config={{ tension: 8, friction: 4 }}
+          leave={{ height: "0%", delay: 200 }}
+          config={{ tension: 4, friction: 2 }}
         >
           {show =>
             show &&

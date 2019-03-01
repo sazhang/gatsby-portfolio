@@ -45,19 +45,10 @@ View the full documentation at https://tailwindcss.com.
 
 let colors = {
 
-  'another-night': '#01172d',
-  'light-lavender': '#ced9f9',
-  'midnight-darker': '#011A33',
-  'midnight-dark': '#011E3A',
-  'goldish': '#FDB13A',
-
-  /* palette from dribble */
+  'goldish': '#FFC857',
   'muted-black': '#0F0814',
-  'steel-grey': '#42455E',
   'off-white': '#E7EDEE',
   'corp-blue': '#2B5DCB',
-  'light-grey': '#A2ADBA',
-  'muted-lavender': '#7D7DA8',
 
   'transparent': 'transparent',
 

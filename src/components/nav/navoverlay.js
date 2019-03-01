@@ -8,44 +8,36 @@ import { LinkStyle } from "../../utils/globalstyles";
 
 // Links that appear in the nav overlay
 const Block = css`
-  ${tw`w-full relative text-center`};
-  top: 10%;
+  ${tw`h-full w-full relative text-center pt-5`};
 `;
 
 const Links = styled(animated.div)`
-  ${tw`w-full relative`};
-  height: 60px;
-  line-height: 60px;
+  ${tw`relative leading-tight`};
   a {
-    ${tw`my-0 mx-auto text-4xl sm:text-5xl`};
+    ${tw`my-0 mx-auto text-3xl sm:text-4xl md:text-5xl font-semibold hover:text-goldish`};
     will-change: transform, opacity;
   }
-
   h3 {
-    ${tw`pt-4`};
+    ${tw`my-0 pt-6`};
   }
 `;
 
 function Navlink(props) {
   return (
-    <Link to={props.link} css={LinkStyle}>
+    <Link to={props.link}>
       {props.name}
     </Link>
   );
 }
 
 const items = [
-  <h3>WHAT IM WORKING ON</h3>,
+  <h3>HAVING FUN WITH</h3>,
   <Navlink link="/podfavs" name="podfavs" />,
   <Navlink link="/ufosights" name="ufo sightings" />,
   <Navlink link="/redesigns" name="app redesign" />,
   <h3>CHECK OUT MY</h3>,
   <a css={LinkStyle} href="/" target="_blank" rel="noopener noreferrer">resume</a>,
-  <a css={LinkStyle} href="https://github.com/sazhang" target="_blank" rel="noopener noreferrer">github</a>,
-  <h3>LET'S CONNECT</h3>,
-  <a css={LinkStyle} href="mailto:zhang.sar@husky.neu.edu">email</a>,
-  <a css={LinkStyle} href="https://www.linkedin.com/in/szhang96/" target="_blank" rel="noopener noreferrer">linkedin</a>,
-  <a css={LinkStyle} href="https://twitter.com/szhangster" target="_blank" rel="noopener noreferrer">twitter</a>,
+  <h3>✌️ LET'S CONNECT 🖖</h3>,
 ];
 
 const config = { mass: 5, tension: 2000, friction: 200 };
@@ -55,15 +47,14 @@ function NavOverlay({ toggle }) {
     config,
     opacity: toggle ? 1 : 0,
     x: toggle ? 0 : 20,
-    height: toggle ? 60 : 0,
     delay: toggle ? 300 : 0,
-    from: { opacity: 0, x: 20, height: 0 },
+    from: { opacity: 0, x: 20 },
     reverse: !toggle
   });
 
   return (
     <div css={Block}>
-      {trail.map(({ x, height, ...rest }, index) => (
+      {trail.map(({ x, ...rest }, index) => (
         <Links
           key={index}
           style={{
@@ -71,7 +62,7 @@ function NavOverlay({ toggle }) {
             transform: x.interpolate(x => `translate3d(0,${x}px,0)`)
           }}
         >
-          <animated.div style={{ height }}>{items[index]}</animated.div>
+          <animated.div>{items[index]}</animated.div>
         </Links>
       ))}
     </div>

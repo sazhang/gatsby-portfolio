@@ -9,7 +9,10 @@ import PropTypes from "prop-types";
 const ImgStyle = styled.div`
   ${tw`w-full mb-6 px-3 md:px-4 lg:px-6`};
   @media (min-width: 425px) {
-    ${tw`w-5/6 sm:w-1/2 `};
+    ${tw`w-5/6 sm:w-1/2`};
+  }
+  a {
+    ${tw`hover:text-goldish`};
   }
 `;
 

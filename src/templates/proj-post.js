@@ -4,18 +4,29 @@ import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import tw from "tailwind.macro";
+import { css } from "@emotion/core";
 import Layout from "../components/layout";
 import { Section, Container } from "../utils/globalstyles";
 import Img from "gatsby-image";
 
 // Layout for each project case study
 const Btn = styled.button`
-  ${tw`text-grey text-xs bg-muted-black hover:bg-transparent hover:underline px-4 py-3 mx-1 md:mx-2`};
+  ${tw`font-light text-grey text-xs bg-muted-black hover:bg-grey-darkest px-4 py-3 mx-1 md:mx-2`};
 `;
 
 function Button(props) {
   if (props.link) {
-    return <Btn>{props.title}</Btn>;
+    return (
+      <Btn>
+        <a
+          href={props.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {props.title}
+        </a>
+      </Btn>
+    );
   }
   return null;
 }
@@ -61,7 +72,11 @@ const ProjectPost = ({ data }) => {
         <link rel="canonical" href={url} />
         <html lang="en" />
       </Helmet>
-      <Section>
+      <Section
+        css={css`
+          ${tw`min-h-screen`}
+        `}
+      >
         <Container>
           <TopDiv>
             <TitleDiv>
