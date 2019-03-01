@@ -4,7 +4,6 @@ import React from "react";
 export default () => (
   <a
     aria-label="twitter"
-    aria-required="true"
     href="https://twitter.com/szhangster"
     target="_blank"
     rel="noopener noreferrer"

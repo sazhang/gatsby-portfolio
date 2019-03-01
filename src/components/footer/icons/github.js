@@ -4,7 +4,6 @@ import React from "react";
 export default () => (
   <a
     aria-label="github"
-    aria-required="true"
     href="https://github.com/sazhang"
     target="_blank"
     rel="noopener noreferrer"

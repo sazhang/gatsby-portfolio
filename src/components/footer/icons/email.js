@@ -4,7 +4,6 @@ import React from "react";
 export default () => (
   <a
     aria-label="email"
-    aria-required="true"
     href="mailto:zhang.sar@husky.neu.edu"
   >
     <svg

@@ -4,7 +4,6 @@ import React from "react";
 export default () => (
   <a
     aria-label="instagram"
-    aria-required="true"
     href="https://www.instagram.com/sarah.h.z/"
     target="_blank"
     rel="noopener noreferrer"
