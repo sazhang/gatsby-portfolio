@@ -1,8 +1,8 @@
 import { React, Component } from "react";
+import { navigate } from "gatsby";
 import tw from "tailwind.macro";
 import styled from "@emotion/styled";
-import { css } from "@emotion/core";
-import Navicon from "./navicon";
+import logo from "../../images/polyz.png";
 import { MenuBtnDiv, Hamburger, Close } from "./menubtn";
 import { Transition, animated } from "react-spring/renderprops";
 import NavOverlay from "./navoverlay";
@@ -21,11 +21,19 @@ const Overlay = styled(animated.div)`
   will-change: transform, opacity;
 `;
 
+const IconBtn = styled.button`
+  ${tw`h-8 w-8 items-center bg-transparent`};
+  background: url(${logo});
+  background-size: contain;
+  background-repeat: no-repeat;
+`;
+
 class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = { show: false };
     this.toggle = this.toggle.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   toggle() {
@@ -34,14 +42,16 @@ class Navbar extends Component {
     });
   }
 
+  handleClick(e) {
+    e.preventDefault();
+    navigate("/");
+  }
+
   render() {
     return (
       <Nav>
         <Container>
-          <div css={css`z-index: 40;`}>
-            <Navicon />
-          </div>
-
+          <IconBtn onClick={this.handleClick} role="button" />
           <MenuBtnDiv>
             <div
               css={this.state.show ? Close : Hamburger}
