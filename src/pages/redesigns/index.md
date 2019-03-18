@@ -1,10 +1,10 @@
 ---
-title: "app redesign"
-num: 3
+title: "hunter's portfolio"
+num: 2
 cover: "./cover.png"
-category: "ux/ui design"
-descrip: "Redesign of Apple's Podcast app"
-tags: ['ux design', 'adobe xd', 'illustrator']
+category: "design & dev"
+descrip: "Creating Hunter's portfolio website"
+tags: ['GatsbyJS', 'React']
 site: ""
 github: ""
 ---

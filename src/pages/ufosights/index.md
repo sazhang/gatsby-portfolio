@@ -1,6 +1,6 @@
 ---
 title: "ufo sightings"
-num: 2
+num: 3
 cover: "./cover.png"
 category: "web development"
 descrip: "Interactive map of UFO sightings"
