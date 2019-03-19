@@ -51,7 +51,7 @@ class Navbar extends Component {
     return (
       <Nav>
         <Container>
-          <IconBtn onClick={this.handleClick} role="button" />
+          <IconBtn onClick={this.handleClick} aria-label="home" role="button" />
           <MenuBtnDiv>
             <div
               css={this.state.show ? Close : Hamburger}
