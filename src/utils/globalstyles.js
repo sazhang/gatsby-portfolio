@@ -4,16 +4,23 @@ import tw from "tailwind.macro";
 
 // Global styles
 export const Section = styled.div`
-  ${tw`flex w-full h-auto justify-center`};
-  min-height: 50vh;
+  ${tw`flex w-full h-auto justify-center bg-blue-darkest`};
 `;
-
+//mx-5 sm:mx-16 xl:max-w-xl 
 export const Container = styled.div`
-  ${tw`w-full mx-5 sm:mx-16 xl:max-w-xl my-auto`};
+  ${tw`w-full bg-purple-darkest my-auto`};
 `;
 
 export const FixedContent = styled.div`
   ${tw`fixed w-full h-full`};
+`;
+
+export const Row = styled.div`
+  ${tw`flex w-full bg-pink-darkest`};
+`;
+
+export const HalfDiv = styled.div`
+  ${tw`w-full md:w-1/2 bg-teal-darkest`};
 `;
 
 // Link styles

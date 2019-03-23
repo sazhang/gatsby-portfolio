@@ -4,11 +4,10 @@ import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import tw from "tailwind.macro";
-import { Section, Container } from "../utils/globalstyles";
+import { Row, HalfDiv } from "../utils/globalstyles";
 import Layout from "../components/layout";
 import Project from "../components/project";
 import About from "../components/about";
-import Landing from "../components/landing";
 
 // Main page
 const Wrapper = styled.div`
@@ -18,44 +17,48 @@ const Wrapper = styled.div`
   }
 `;
 
+const ProjectWrapper = styled.div`
+  .row:nth-of-type(even) {
+    ${tw`justify-end`};
+  }
+`;
+
 const Index = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
-    <>
-      <Layout>
-        <Helmet>
-          <meta charSet="utf-8" />
-          <meta
-            name="description"
-            content="Sarah Zhang's portfolio website built using Gatsby"
+    <Layout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content="Sarah Zhang's portfolio website built using Gatsby"
+        />
+        <meta
+          name="keywords"
+          content="Sarah Zhang, portfolio, personal, Gatsby, React, Tailwind, Emotion"
+        />
+        <meta name="author" content="Sarah Zhang" />
+        <title>Sarah Zhang | Portfolio</title>
+        <link rel="canonical" href="https://sarahzhang.co/" />
+        <html lang="en" />
+      </Helmet>
+      <ProjectWrapper>
+        <Row>
+          <HalfDiv>
+            <h1>Hey I'm Sarah,</h1>
+            <h3>an aspiring full stack dev w/ a passion for UX design.</h3>
+          </HalfDiv>
+        </Row>
+        {edges.map(({ node }) => (
+          <Project
+            key={node.id}
+            path={node.fields.slug}
+            title={node.frontmatter.title}
+            cover={node.frontmatter.cover.childImageSharp.fluid}
           />
-          <meta
-            name="keywords"
-            content="Sarah Zhang, portfolio, personal, Gatsby, React, Tailwind, Emotion"
-          />
-          <meta name="author" content="Sarah Zhang" />
-          <title>Sarah Zhang | Portfolio</title>
-          <link rel="canonical" href="https://sarahzhang.co/" />
-          <html lang="en" />
-        </Helmet>
-        <Landing />
-        <About />
-        <Section>
-          <Container>
-            <Wrapper>
-              {edges.map(({ node }) => (
-                <Project
-                  key={node.id}
-                  path={node.fields.slug}
-                  title={node.frontmatter.title}
-                  cover={node.frontmatter.cover.childImageSharp.fluid}
-                />
-              ))}
-            </Wrapper>
-          </Container>
-        </Section>
-      </Layout>
-    </>
+        ))}
+      </ProjectWrapper>
+    </Layout>
   );
 };
 

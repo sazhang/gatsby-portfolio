@@ -9,15 +9,12 @@ import Insta from "./icons/insta";
 
 // Let's connect section
 const Social = css`
-  ${tw`flex fixed pin-b w-full justify-center mb-2 sm:mb-6`};
+  ${tw`flex flex-col fixed pin-b pl-4`};
   a {
-    ${tw`inline-block pr-6 hover:text-goldish`};
-    &:nth-of-type(5) {
-      ${tw`pr-0`};
-    }
+    ${tw`block hover:text-goldish pb-4`};
   }
   svg {
-    ${tw`h-6 w-6 sm:h-8 sm:w-8`};
+    ${tw`h-6 w-6`};
   }
 `;
 

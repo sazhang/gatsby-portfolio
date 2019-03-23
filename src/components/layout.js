@@ -1,13 +1,18 @@
 import React from "react";
 import { Global, css } from "@emotion/core";
 import { StaticQuery, graphql } from "gatsby";
+import styled from "@emotion/styled";
 import tw from "tailwind.macro";
 import "typeface-montserrat";
 import "typeface-lora";
 import Navbar from "../components/nav/navbar";
-import Connect from "../components/footer/connect";
+import Connect from "../components/socials/connect";
 
 // Overall layout -
+const Body = styled.body`
+  ${tw`flex w-full min-h-screen flex-col`};
+`;
+
 export default ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -23,28 +28,9 @@ export default ({ children }) => (
       <>
         <Global
           styles={css`
-            *,
-            *:before,
-            *:after {
-              box-sizing: inherit;
-            }
-            html {
-              text-rendering: optimizeLegibility;
-              box-sizing: border-box;
-              -ms-overflow-style: scrollbar;
-              -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-              -webkit-font-smoothing: antialiased;
-              -moz-osx-font-smoothing: grayscale;
-            }
             html,
             body {
-              ${tw`p-0 m-0 text-off-white font-sans overflow-x-hidden`};
-              background-image: linear-gradient(
-                109.6deg,
-                rgba(36, 45, 57, 1) 11.2%,
-                rgba(16, 37, 60, 1) 51.2%,
-                rgba(0, 0, 0, 1) 98.6%
-              );
+              ${tw`p-0 m-0 w-full bg-black text-off-white font-sans overflow-x-hidden`};
             }
             a {
               ${tw`no-underline	cursor-pointer text-off-white`};
@@ -77,20 +63,29 @@ export default ({ children }) => (
             }
           `}
         />
-        <main
-          css={css`
-            background-image: linear-gradient(
-              109.6deg,
-              rgba(36, 45, 57, 1) 11.2%,
-              rgba(16, 37, 60, 1) 51.2%,
-              rgba(0, 0, 0, 1) 98.6%
-            );
-          `}
-        >
-          {children}
+        <Body>
           <Navbar />
-          <Connect />
-        </main>
+          <main
+            css={css`
+              flex: 1 0 auto;
+            `}
+          >
+            <div
+              css={css`
+                ${tw`mx-auto bg-grey-darkest xl:max-w-4xl`};
+              `}
+            >
+              <div
+                css={css`
+                  ${tw`sm:mx-16 md:mx-20 lg:mx-24 xl:mx-32`};
+                `}
+              >
+                {children}
+              </div>
+              <Connect />
+            </div>
+          </main>
+        </Body>
       </>
     )}
   />

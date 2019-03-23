@@ -1,31 +1,16 @@
 import { React, Component } from "react";
-import { navigate } from "gatsby";
+import { Link, navigate } from "gatsby";
 import tw from "tailwind.macro";
+import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import logo from "../../images/polyz.png";
-import { MenuBtnDiv, Hamburger, Close } from "./menubtn";
-import { Transition, animated } from "react-spring/renderprops";
-import NavOverlay from "./navoverlay";
 
 // Responsive menu w/ animated hamburger icon
 const Nav = styled.nav`
-  ${tw`flex fixed pin-t pin-l pin-r justify-center p-4`};
-`;
-
-const Container = styled.nav`
-  ${tw`flex w-full items-center justify-between flex-wrap`};
-`;
-
-const Overlay = styled(animated.div)`
-  ${tw`max-h-screen w-full fixed pin-t pin-l bg-muted-black`};
-  will-change: transform, opacity;
-`;
-
-const IconBtn = styled.button`
-  ${tw`h-8 w-8 items-center bg-transparent`};
-  background: url(${logo});
-  background-size: contain;
-  background-repeat: no-repeat;
+  ${tw`flex justify-between bg-indigo-dark py-4 mx-auto w-full xl:max-w-4xl`};
+  div > a:nth-of-type(1) {
+    ${tw`pr-4`};
+  }
 `;
 
 class Navbar extends Component {
@@ -50,37 +35,15 @@ class Navbar extends Component {
   render() {
     return (
       <Nav>
-        <Container>
-          <IconBtn onClick={this.handleClick} aria-label="home" role="button" />
-          <MenuBtnDiv>
-            <div
-              css={this.state.show ? Close : Hamburger}
-              onClick={this.toggle}
-            >
-              <span />
-              <span />
-              <span />
-            </div>
-          </MenuBtnDiv>
-        </Container>
-
-        <Transition
-          native
-          items={this.state.show}
-          from={{ height: "0%" }}
-          enter={[{ height: "100%" }]}
-          leave={{ height: "0%", delay: 200 }}
-          config={{ tension: 4, friction: 2 }}
-        >
-          {show =>
-            show &&
-            (props => (
-              <Overlay style={props}>
-                <NavOverlay toggle={this.state.show} />
-              </Overlay>
-            ))
-          }
-        </Transition>
+        <div css={css`${tw`pl-24`};`}>
+          <Link to="/">
+            <strong>SZ</strong>
+          </Link>
+        </div>
+        <div css={css`${tw`pr-24`};`}>
+          <Link to="/">work</Link>
+          <Link to="/about">about</Link>
+        </div>
       </Nav>
     );
   }

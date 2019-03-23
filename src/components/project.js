@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 import styled from "@emotion/styled";
 import tw from "tailwind.macro";
 import PropTypes from "prop-types";
+import { HalfDiv, Row } from "../utils/globalstyles";
 
 // View of project on main page
 const ImgStyle = styled.div`
@@ -17,12 +18,14 @@ const ImgStyle = styled.div`
 `;
 
 const Project = ({ path, title, cover }) => (
-  <ImgStyle>
-    <Img fluid={cover}/>
-    <Link to={path}>
-      <h2>{title}</h2>
-    </Link>
-  </ImgStyle>
+  <Row className="row">
+    <HalfDiv>
+      <Img fluid={cover} />
+      <Link to={path}>
+        <h2>{title}</h2>
+      </Link>
+    </HalfDiv>
+  </Row>
 );
 
 export default Project;
