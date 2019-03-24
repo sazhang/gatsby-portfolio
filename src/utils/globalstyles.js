@@ -6,7 +6,7 @@ import tw from "tailwind.macro";
 export const Section = styled.div`
   ${tw`flex w-full h-auto justify-center bg-blue-darkest`};
 `;
-//mx-5 sm:mx-16 xl:max-w-xl 
+//mx-5 sm:mx-16 xl:max-w-xl
 export const Container = styled.div`
   ${tw`w-full bg-purple-darkest my-auto`};
 `;
@@ -16,11 +16,11 @@ export const FixedContent = styled.div`
 `;
 
 export const Row = styled.div`
-  ${tw`flex w-full bg-pink-darkest`};
+  ${tw`flex flex-wrap w-full `};
 `;
 
 export const HalfDiv = styled.div`
-  ${tw`w-full md:w-1/2 bg-teal-darkest`};
+  ${tw`w-full sm:w-1/2 `};
 `;
 
 // Link styles

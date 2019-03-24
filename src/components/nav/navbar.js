@@ -6,11 +6,12 @@ import styled from "@emotion/styled";
 import logo from "../../images/polyz.png";
 
 // Responsive menu w/ animated hamburger icon
+const Header = styled.header`
+  ${tw`w-full max-w-2xl fixed pin-t z-10`};
+`;
+
 const Nav = styled.nav`
-  ${tw`flex justify-between bg-indigo-dark py-4 mx-auto w-full xl:max-w-4xl`};
-  div > a:nth-of-type(1) {
-    ${tw`pr-4`};
-  }
+  ${tw`flex justify-between py-4`};
 `;
 
 class Navbar extends Component {
@@ -34,17 +35,26 @@ class Navbar extends Component {
 
   render() {
     return (
-      <Nav>
-        <div css={css`${tw`pl-24`};`}>
-          <Link to="/">
-            <strong>SZ</strong>
-          </Link>
-        </div>
-        <div css={css`${tw`pr-24`};`}>
-          <Link to="/">work</Link>
-          <Link to="/about">about</Link>
-        </div>
-      </Nav>
+      <Header>
+        <Nav>
+          <div
+            css={css`
+              ${tw`pl-2 sm:pl-5`};
+            `}
+          >
+            <Link to="/">
+              <strong>SZ</strong>
+            </Link>
+          </div>
+          <div
+            css={css`
+              ${tw`pr-2 sm:pr-5`};
+            `}
+          >
+            <Link to="/about">SZ</Link>
+          </div>
+        </Nav>
+      </Header>
     );
   }
 }

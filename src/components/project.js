@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 import styled from "@emotion/styled";
+import { css } from "@emotion/core";
 import tw from "tailwind.macro";
 import PropTypes from "prop-types";
 import { HalfDiv, Row } from "../utils/globalstyles";
@@ -20,10 +21,16 @@ const ImgStyle = styled.div`
 const Project = ({ path, title, cover }) => (
   <Row className="row">
     <HalfDiv>
-      <Img fluid={cover} />
       <Link to={path}>
-        <h2>{title}</h2>
+        <h2
+          css={css`
+            ${tw`absolute z-10 my-0`};
+          `}
+        >
+          {title}
+        </h2>
       </Link>
+      <Img fluid={cover} />
     </HalfDiv>
   </Row>
 );

@@ -8,13 +8,16 @@ import { Row, HalfDiv } from "../utils/globalstyles";
 import Layout from "../components/layout";
 import Project from "../components/project";
 import About from "../components/about";
+import css from "@emotion/css";
 
 // Main page
-const Wrapper = styled.div`
-  ${tw`flex flex-wrap -mx-3 md:-mx-4 lg:-mx-6 my-12 sm:my-20 justify-center sm:justify-start z-1`};
-  div:nth-of-type(even) {
-    ${tw`sm:mt-20 sm:mb-5`};
-  }
+const TextSvg = styled.svg`
+  ${tw`text-5xl font-extrabold font-sans w-full h-32`};
+`;
+
+const Text = styled.text`
+  ${tw`text-off-white stroke-current`};
+  stroke-linejoin: round;
 `;
 
 const ProjectWrapper = styled.div`
@@ -45,8 +48,13 @@ const Index = ({ data }) => {
       <ProjectWrapper>
         <Row>
           <HalfDiv>
-            <h1>Hey I'm Sarah,</h1>
-            <h3>an aspiring full stack dev w/ a passion for UX design.</h3>
+            <TextSvg viewBox="0 0 150 75">
+              <Text x="25%" y="50%" dominantBaseline="middle" textAnchor="middle">Hello</Text>
+            </TextSvg>
+            <h3>
+              I'm Sarah, an aspiring full stack developer with a passion for UX
+              design.
+            </h3>
           </HalfDiv>
         </Row>
         {edges.map(({ node }) => (
