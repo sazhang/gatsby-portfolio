@@ -1,17 +1,15 @@
 import { React, Component } from "react";
 import { Link, navigate } from "gatsby";
 import tw from "tailwind.macro";
-import { css } from "@emotion/core";
 import styled from "@emotion/styled";
-import logo from "../../images/polyz.png";
 
 // Responsive menu w/ animated hamburger icon
 const Header = styled.header`
-  ${tw`w-full max-w-2xl fixed pin-t z-10`};
+  ${tw`w-full fixed pin-t z-10 text-lg`};
 `;
 
 const Nav = styled.nav`
-  ${tw`flex justify-between py-4`};
+  ${tw`flex justify-between py-4 px-5`};
 `;
 
 class Navbar extends Component {
@@ -37,21 +35,13 @@ class Navbar extends Component {
     return (
       <Header>
         <Nav>
-          <div
-            css={css`
-              ${tw`pl-2 sm:pl-5`};
-            `}
-          >
+          <div>
             <Link to="/">
               <strong>SZ</strong>
             </Link>
           </div>
-          <div
-            css={css`
-              ${tw`pr-2 sm:pr-5`};
-            `}
-          >
-            <Link to="/about">SZ</Link>
+          <div>
+            <Link to="/about">about</Link>
           </div>
         </Nav>
       </Header>

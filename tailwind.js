@@ -46,9 +46,11 @@ View the full documentation at https://tailwindcss.com.
 let colors = {
 
   'goldish': '#FFC857',
-  'muted-black': '#0F0814',
-  'off-white': '#E7EDEE',
-  'corp-blue': '#2B5DCB',
+  'midnight': '#001429',
+  'muted-black': '#101C28',
+  'off-white': '#c9d0f3',
+  'pale-blue': '#bac3f8',
+  'blush': '#fa72e1',
 
   'transparent': 'transparent',
 

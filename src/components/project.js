@@ -18,19 +18,18 @@ const ImgStyle = styled.div`
   }
 `;
 
-const Project = ({ path, title, cover }) => (
+const Project = ({ path, title, cover, site }) => (
   <Row className="row">
     <HalfDiv>
-      <Link to={path}>
-        <h2
-          css={css`
-            ${tw`absolute z-10 my-0`};
-          `}
-        >
-          {title}
-        </h2>
-      </Link>
       <Img fluid={cover} />
+      <a
+        aria-label="link to live project"
+        href={site}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <h3>{title}</h3>
+      </a>
     </HalfDiv>
   </Row>
 );
@@ -40,5 +39,6 @@ export default Project;
 Project.propTypes = {
   path: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  cover: PropTypes.object.isRequired
+  cover: PropTypes.object.isRequired,
+  site: PropTypes.string.isRequired
 };

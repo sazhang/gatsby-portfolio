@@ -2,30 +2,13 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
-import styled from "@emotion/styled";
-import tw from "tailwind.macro";
-import { Row, HalfDiv } from "../utils/globalstyles";
-import Layout from "../components/layout";
-import Project from "../components/project";
-import About from "../components/about";
 import css from "@emotion/css";
+import tw from "tailwind.macro";
+import { Container, Row, HalfDiv, GradientKnockoutTitle } from "../utils/globalstyles";
+import Layout from "../layouts/layout";
+import Project from "../components/project";
 
 // Main page
-const TextSvg = styled.svg`
-  ${tw`text-5xl font-extrabold font-sans w-full h-32`};
-`;
-
-const Text = styled.text`
-  ${tw`text-off-white stroke-current`};
-  stroke-linejoin: round;
-`;
-
-const ProjectWrapper = styled.div`
-  .row:nth-of-type(even) {
-    ${tw`justify-end`};
-  }
-`;
-
 const Index = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
@@ -45,13 +28,21 @@ const Index = ({ data }) => {
         <link rel="canonical" href="https://sarahzhang.co/" />
         <html lang="en" />
       </Helmet>
-      <ProjectWrapper>
+      <Container
+        css={css`
+          .row:nth-of-type(even) {
+            ${tw`justify-end`};
+          }
+        `}
+      >
         <Row>
           <HalfDiv>
-            <TextSvg viewBox="0 0 150 75">
-              <Text x="25%" y="50%" dominantBaseline="middle" textAnchor="middle">Hello</Text>
-            </TextSvg>
-            <h3>
+            <GradientKnockoutTitle>Hello.</GradientKnockoutTitle>
+            <h3
+              css={css`
+                ${tw`font-normal text-pale-blue`};
+              `}
+            >
               I'm Sarah, an aspiring full stack developer with a passion for UX
               design.
             </h3>
@@ -63,9 +54,10 @@ const Index = ({ data }) => {
             path={node.fields.slug}
             title={node.frontmatter.title}
             cover={node.frontmatter.cover.childImageSharp.fluid}
+            site={node.frontmatter.site}
           />
         ))}
-      </ProjectWrapper>
+      </Container>
     </Layout>
   );
 };
@@ -80,7 +72,8 @@ Index.propTypes = {
           node: PropTypes.shape({
             frontmatter: PropTypes.shape({
               title: PropTypes.string.isRequired,
-              cover: PropTypes.object.isRequired
+              cover: PropTypes.object.isRequired,
+              site: PropTypes.string.isRequired
             })
           })
         }).isRequired
@@ -105,6 +98,7 @@ export const query = graphql`
                 }
               }
             }
+            site
           }
           fields {
             slug

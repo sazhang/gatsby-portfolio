@@ -1,43 +1,28 @@
 import styled from "@emotion/styled";
-import { css } from "@emotion/core";
 import tw from "tailwind.macro";
 
 // Global styles
-export const Section = styled.div`
-  ${tw`flex w-full h-auto justify-center bg-blue-darkest`};
-`;
-//mx-5 sm:mx-16 xl:max-w-xl
-export const Container = styled.div`
-  ${tw`w-full bg-purple-darkest my-auto`};
-`;
-
-export const FixedContent = styled.div`
-  ${tw`fixed w-full h-full`};
+export const Container = styled.section`
+  ${tw`h-full w-full max-w-3xl mx-auto pt-24 px-10 sm:px-16 lg:px-24`};
 `;
 
 export const Row = styled.div`
-  ${tw`flex flex-wrap w-full `};
+  ${tw`flex flex-wrap w-full h-full`};
 `;
 
 export const HalfDiv = styled.div`
-  ${tw`w-full sm:w-1/2 `};
+  ${tw`w-full h-full mb-8 sm:w-1/2`};
 `;
 
-// Link styles
-export const LinkStyle = css`
-  ${tw`text-lg md:text-xl`};
+export const LessThanHalfDiv = styled.div`
+  ${tw`w-2/5 px-3`};
 `;
 
-const startColor = "#2b5876";
-const endColor = "#4e4376";
-
-export const Gradient = css`
-  background-image: linear-gradient(to right, ${startColor}, ${endColor});
-  background-repeat: no-repeat;
-  background-size: 100% 0;
-  background-position: 0 88%;
-  transition: background-size 0.25s ease-in;
-  &:hover {
-    background-size: 100% 88%;
-  }
+export const GradientKnockoutTitle = styled.h1`
+  background: #fc466b;
+  background: -webkit-linear-gradient(to right, #3f5efb, #fc466b);
+  background: linear-gradient(to right, #3f5efb, #fc466b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 `;

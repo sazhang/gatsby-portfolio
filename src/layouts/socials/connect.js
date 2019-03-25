@@ -11,7 +11,7 @@ import Insta from "./icons/insta";
 const Social = css`
   ${tw`hidden sm:flex flex-col fixed pin-b pl-5`};
   a {
-    ${tw`block hover:text-goldish pb-4`};
+    ${tw`block pb-3`};
   }
   svg {
     width: 1.25rem;

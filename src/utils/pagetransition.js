@@ -1,11 +1,12 @@
 import React from "react";
-import { useTransition, animated } from "react-spring";
+import { useTransition, animated, config } from "react-spring";
 
 const PageTransition = props => {
   const transitions = useTransition([props], item => item.location.pathname, {
-    from: { position: "absolute", opacity: 0 },
+    from: { opacity: 0 },
     enter: { opacity: 1 },
-    leave: { opacity: 0 }
+    leave: { opacity: 0 },
+    config: config.gentle,
   });
 
   return transitions.map(({ item, props: styles, key }) => (

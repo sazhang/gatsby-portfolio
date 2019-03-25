@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import tw from "tailwind.macro";
 import { css } from "@emotion/core";
-import Layout from "../components/layout";
+import Layout from "../layouts/layout";
 import { Section, Container } from "../utils/globalstyles";
 import Img from "gatsby-image";
 
@@ -18,11 +18,7 @@ function Button(props) {
   if (props.link) {
     return (
       <Btn>
-        <a
-          href={props.link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={props.link} target="_blank" rel="noopener noreferrer">
           {props.title}
         </a>
       </Btn>
@@ -72,36 +68,17 @@ const ProjectPost = ({ data }) => {
         <link rel="canonical" href={url} />
         <html lang="en" />
       </Helmet>
-      <Section
-        css={css`
-          ${tw`min-h-screen`}
-        `}
-      >
-        <Container>
-          <TopDiv>
-            <TitleDiv>
-              <h5>{post.frontmatter.category.toUpperCase()}</h5>
-              <h1>{title}</h1>
-              <h4>{descrip}</h4>
 
-              <ButtonDiv>
-                <Button link={post.frontmatter.site} title={"WEBSITE"} />
-                <Button link={post.frontmatter.github} title={"CODE"} />
-              </ButtonDiv>
-            </TitleDiv>
+      <Img fluid={post.frontmatter.cover.childImageSharp.fluid} />
 
-            <ImgDiv>
-              <Img fluid={post.frontmatter.cover.childImageSharp.fluid} />
-            </ImgDiv>
-          </TopDiv>
+      <h5>{post.frontmatter.category.toUpperCase()}</h5>
+      <h1>{title}</h1>
+      <h4>{descrip}</h4>
 
-          <DescripDiv>
-            <InnerDiv>
-              <p dangerouslySetInnerHTML={{ __html: post.html }} />
-            </InnerDiv>
-          </DescripDiv>
-        </Container>
-      </Section>
+      <Button link={post.frontmatter.site} title={"WEBSITE"} />
+      <Button link={post.frontmatter.github} title={"CODE"} />
+
+      <p dangerouslySetInnerHTML={{ __html: post.html }} />
     </Layout>
   );
 };
@@ -134,7 +111,7 @@ export const query = graphql`
         num
         cover {
           childImageSharp {
-            fluid(maxWidth: 500) {
+            fluid(maxWidth: 1200) {
               ...GatsbyImageSharpFluid
             }
           }
