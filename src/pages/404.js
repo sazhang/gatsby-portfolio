@@ -2,7 +2,10 @@ import React from "react";
 import { Link } from "gatsby";
 import Helmet from "react-helmet";
 import Layout from "../layouts/layout";
-import { Container, GradientKnockoutTitle } from "../utils/globalstyles";
+import { Container } from "../utils/globalstyles";
+import GradientTitle from "../components/gradientTitle";
+import css from "@emotion/css";
+import tw from "tailwind.macro";
 
 // 404 page
 const ErrorPage = () => (
@@ -23,10 +26,22 @@ const ErrorPage = () => (
       <html lang="en" />
     </Helmet>
     <Container>
-      <GradientKnockoutTitle>Woops, something's up.</GradientKnockoutTitle>
-      <h3>
+      <GradientTitle text="Woops, something's up." />
+      <h3
+        css={css`
+          ${tw`text-pale-blue`};
+        `}
+      >
         This page does not exist or is no longer reachable. Return{" "}
-        <Link to="/">home</Link>.
+        <Link
+          to="/"
+          css={css`
+            ${tw`underline`};
+          `}
+        >
+          home
+        </Link>
+        .
       </h3>
     </Container>
   </Layout>

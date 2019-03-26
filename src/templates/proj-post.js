@@ -4,9 +4,8 @@ import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import tw from "tailwind.macro";
-import { css } from "@emotion/core";
+//import { css } from "@emotion/core";
 import Layout from "../layouts/layout";
-import { Section, Container } from "../utils/globalstyles";
 import Img from "gatsby-image";
 
 // Layout for each project case study
@@ -27,7 +26,7 @@ function Button(props) {
   return null;
 }
 
-const TopDiv = styled.div`
+/* const TopDiv = styled.div`
   ${tw`flex flex-wrap-reverse items-end mt-24`};
 `;
 
@@ -49,7 +48,7 @@ const DescripDiv = styled.div`
 
 const InnerDiv = styled.div`
   ${tw`w-full`};
-`;
+`; */
 
 const ProjectPost = ({ data }) => {
   const post = data.markdownRemark;

@@ -4,9 +4,10 @@ import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import css from "@emotion/css";
 import tw from "tailwind.macro";
-import { Container, Row, HalfDiv, GradientKnockoutTitle } from "../utils/globalstyles";
+import { Container, Row, HalfDiv } from "../utils/globalstyles";
 import Layout from "../layouts/layout";
 import Project from "../components/project";
+import GradientTitle from "../components/gradientTitle";
 
 // Main page
 const Index = ({ data }) => {
@@ -37,7 +38,7 @@ const Index = ({ data }) => {
       >
         <Row>
           <HalfDiv>
-            <GradientKnockoutTitle>Hello.</GradientKnockoutTitle>
+            <GradientTitle text="Hello." />
             <h3
               css={css`
                 ${tw`font-normal text-pale-blue`};

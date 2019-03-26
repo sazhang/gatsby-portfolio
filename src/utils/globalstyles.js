@@ -17,12 +17,3 @@ export const HalfDiv = styled.div`
 export const LessThanHalfDiv = styled.div`
   ${tw`w-2/5 px-3`};
 `;
-
-export const GradientKnockoutTitle = styled.h1`
-  background: #fc466b;
-  background: -webkit-linear-gradient(to right, #3f5efb, #fc466b);
-  background: linear-gradient(to right, #3f5efb, #fc466b);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-`;
