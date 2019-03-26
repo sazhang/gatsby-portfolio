@@ -5,6 +5,7 @@ import Layout from "../layouts/layout";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import tw from "tailwind.macro";
+import GradientTitle from "../components/gradientTitle";
 
 // About me section
 const ParagraphDiv = styled.div`
@@ -12,7 +13,7 @@ const ParagraphDiv = styled.div`
 `;
 
 const BoldSpan = styled.span`
-  ${tw`text-off-white font-bold`};
+  ${tw`text-blush font-bold`};
 `;
 
 export default () => (
@@ -34,6 +35,7 @@ export default () => (
             `}
           >
             <ParagraphDiv>
+              <GradientTitle text="About." />
               <p>
                 Through my varied experiences from customer service to mental
                 health nonprofit to police department to research labs, one
