@@ -29,7 +29,7 @@ function Project(props) {
           style={{ transform: ani.xy.interpolate(trans) }}
         >
           <Img
-            fluid={props.cover}
+            sizes={props.sizes}
             css={css`
               ${tw`shadow-lg`};
             `}

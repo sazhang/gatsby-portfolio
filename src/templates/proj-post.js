@@ -45,6 +45,7 @@ const InnerDiv = styled.div`
 
 const ProjectPost = ({ data }) => {
   const post = data.markdownRemark;
+  console.log(post);
   const title = post.frontmatter.title;
   const url = "https://sarahzhang.co/" + post.frontmatter.path;
   const descrip = post.frontmatter.descrip;
@@ -61,7 +62,7 @@ const ProjectPost = ({ data }) => {
         <html lang="en" />
       </Helmet>
 
-      <Img fluid={post.frontmatter.cover.childImageSharp.fluid} />
+      <Img fluid={post.frontmatter.cover.childImageSharp.sizes} />
 
       <h5>{post.frontmatter.category.toUpperCase()}</h5>
       <h1>{title}</h1>
@@ -99,9 +100,10 @@ export const query = graphql`
         title
         num
         cover {
+          publicURL
           childImageSharp {
-            fluid(maxWidth: 1000) {
-              ...GatsbyImageSharpFluid
+            sizes(maxWidth: 1000 ) {
+              ...GatsbyImageSharpSizes
             }
           }
         }

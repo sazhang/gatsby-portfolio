@@ -54,7 +54,7 @@ const Index = ({ data }) => {
             key={node.id}
             path={node.fields.slug}
             title={node.frontmatter.title}
-            cover={node.frontmatter.cover.childImageSharp.fluid}
+            sizes={node.frontmatter.cover.childImageSharp.sizes}
             site={node.frontmatter.site}
           />
         ))}
@@ -93,9 +93,10 @@ export const query = graphql`
           frontmatter {
             title
             cover {
+              publicURL
               childImageSharp {
-                fluid(maxWidth: 1000) {
-                  ...GatsbyImageSharpFluid
+                sizes(maxWidth: 1000 ) {
+                  ...GatsbyImageSharpSizes
                 }
               }
             }
