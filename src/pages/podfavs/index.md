@@ -1,7 +1,7 @@
 ---
 title: "podfavs"
 num: 1
-cover: "./cover.PNG"
+cover: "./cover.png"
 category: "design & dev"
 descrip: "Podcast recommendation engine"
 tags: ["Java", "Spring", "Neo4j", "React", "AWS"]
