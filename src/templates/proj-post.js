@@ -9,24 +9,12 @@ import Layout from "../layouts/layout";
 import Img from "gatsby-image";
 
 // Layout for each project case study
+/* 
 const Btn = styled.button`
   ${tw`font-light text-grey text-xs bg-muted-black hover:bg-grey-darkest px-4 py-3 mx-1 md:mx-2`};
 `;
 
-function Button(props) {
-  if (props.link) {
-    return (
-      <Btn>
-        <a href={props.link} target="_blank" rel="noopener noreferrer">
-          {props.title}
-        </a>
-      </Btn>
-    );
-  }
-  return null;
-}
-
-/* const TopDiv = styled.div`
+const TopDiv = styled.div`
   ${tw`flex flex-wrap-reverse items-end mt-24`};
 `;
 
@@ -48,7 +36,12 @@ const DescripDiv = styled.div`
 
 const InnerDiv = styled.div`
   ${tw`w-full`};
-`; */
+`; 
+
+<Button link={post.frontmatter.site} title={"WEBSITE"} />
+      <Button link={post.frontmatter.github} title={"CODE"} />
+
+*/
 
 const ProjectPost = ({ data }) => {
   const post = data.markdownRemark;
@@ -73,9 +66,6 @@ const ProjectPost = ({ data }) => {
       <h5>{post.frontmatter.category.toUpperCase()}</h5>
       <h1>{title}</h1>
       <h4>{descrip}</h4>
-
-      <Button link={post.frontmatter.site} title={"WEBSITE"} />
-      <Button link={post.frontmatter.github} title={"CODE"} />
 
       <p dangerouslySetInnerHTML={{ __html: post.html }} />
     </Layout>
@@ -110,7 +100,7 @@ export const query = graphql`
         num
         cover {
           childImageSharp {
-            fluid(maxWidth: 1200) {
+            fluid(maxWidth: 1000) {
               ...GatsbyImageSharpFluid
             }
           }
