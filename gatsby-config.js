@@ -1,15 +1,23 @@
+require('dotenv').config({
+  path: `.env`,
+})
+
+const config = require('./config/website')
+
 module.exports = {
+  // Metadata
   siteMetadata: {
-    title: `Sarah Zhang Portfolio`
+    ...config,
   },
+  //Plugins
   plugins: [
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages`,
+        name: `projects`,
+        path: `${__dirname}/content/projects`,
       },
     },
     {
@@ -17,6 +25,12 @@ module.exports = {
       options: {
         name: `assets`,
         path: `${__dirname}/src/assets`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: config.googleAnalyticsID,
       },
     },
     'gatsby-plugin-sharp',
@@ -40,23 +54,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Sarah Zhang Portfolio",
-        short_name: "Sarah Zhang",
-        start_url: "/",
-        background_color: "#0F0814",
-        theme_color: "#011A33",
-        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
-        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
-        display: "standalone",
-        icon: "src/assets/polyz.png",
+        name: config.title,
+        short_name: config.shortName,
+        description: config.description,
+        start_url: config.pathPrefix,
+        background_color: config.backgroundColor,
+        theme_color: config.themeColor,
+        display: 'standalone',
+        icon: config.favicon,
       },
     },
     'gatsby-plugin-offline',
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-135465108-1",
-      },
-    },
   ]
 };
