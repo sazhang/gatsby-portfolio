@@ -10,6 +10,10 @@ import GradientTitle from "../components/gradientTitle";
 // About me section
 const ParagraphDiv = styled.div`
   ${tw`w-full h-full lg:w-2/3 pt-4 px-4`};
+
+  a {
+    ${tw`underline`};
+  }
 `;
 
 const BoldSpan = styled.span`
@@ -48,21 +52,37 @@ export default () => (
                 my junior year.
               </p>
               <p>
-                I'm currently finishing my last semester as a computer science
-                &amp; cognitive psychology major. In the meantime, you can find
-                me binging podcasts, learning web dev, &amp; playing around in
-                Adobe CC. Check out my{" "}
+                I just graduated, and I'm moving to LA, seeking opportunities at
+                the intersection of tech and design. In the meantime, you can
+                find me binging podcasts, learning front end development, and
+                playing around in Adobe XD. Check out my{" "}
                 <a
                   href={data.file.publicURL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  css={css`
-                    ${tw`underline`};
-                  `}
                 >
                   resume
                 </a>{" "}
-                and side projects.
+                and side projects. You can also track my progress with
+                #100daysofdesign on{" "}
+                <a
+                  aria-label="instagram"
+                  href="https://www.instagram.com/sarahz.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
+                </a>{" "}
+                and #100daysofcode on{" "}
+                <a
+                  aria-label="twitter"
+                  href="https://twitter.com/szhangster"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Twitter
+                </a>
+                .
               </p>
             </ParagraphDiv>
           </Row>
