@@ -68,7 +68,7 @@ const Layout = ({ children }) => (
       `}
     />
     <Body>
-      <Navbar />
+      {/* <Navbar /> */}
       <main
         css={css`
           ${tw`flex-1 z-0`};
@@ -77,7 +77,7 @@ const Layout = ({ children }) => (
         {children}
         <Connect />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </Body>
   </Fragment>
 );

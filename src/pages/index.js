@@ -44,12 +44,11 @@ const Index = ({ data }) => {
                 ${tw`font-normal text-pale-blue`};
               `}
             >
-              I'm Sarah, an aspiring full stack developer with a passion for UX
-              design.
+              I'm Sarah, and I'm rebuilding this website.
             </h3>
           </HalfDiv>
         </Row>
-        {edges.map(({ node }) => (
+{/*         {edges.map(({ node }) => (
           <Project
             key={node.id}
             path={node.fields.slug}
@@ -57,7 +56,7 @@ const Index = ({ data }) => {
             sizes={node.frontmatter.cover.childImageSharp.sizes}
             site={node.frontmatter.site}
           />
-        ))}
+        ))} */}
       </Container>
     </Layout>
   );
